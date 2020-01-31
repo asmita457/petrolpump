@@ -1,0 +1,7 @@
+{
+  "name": "cepl",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

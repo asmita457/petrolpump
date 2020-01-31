@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-row>
+      <ion-col size="2">
+        <button ion-button class="BackButton" (click)="goBackword()" style="margin:10px"></button>
+      </ion-col>
+      <ion-col size="10">
+        <ion-label  class="TitleHeader TitleText">
+          {{savetext}}
+        </ion-label>
+      </ion-col>
+
+    </ion-row>
+    <!-- <ion-title class="Padding0" style="padding: 0;">
+      <div class="TitleHeader">
+        <div class="TitleText">
+          &nbsp;&nbsp;&nbsp;
+          <div style="width: 80%; overflow: hidden; text-overflow: ellipsis;">
+            {{savetext}}
+          </div>
+        </div>
+      
+      </div>
+    </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-input class="inputCss" style="margin-top:40px !important" placeholder="Name"></ion-input>
+  <ion-input class="inputCss" placeholder="Mobile"></ion-input>
+  <ion-input  class="inputCss" placeholder="Amount"></ion-input>
+  <ion-input  class="inputCss" placeholder="Address"></ion-input>
+
+
+  <ion-button (click)="addCustomerData()" align="center" style="margin-top:30px; margin-left:28%">{{savetext}}</ion-button>
+</ion-content>

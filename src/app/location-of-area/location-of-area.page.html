@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-title class="Padding0">
+        <div class="TitleHeader">
+          <div class="TitleText">
+            <button ion-button class="BackButton" (click)="goBackword()"></button>
+            <!-- <i class="material-icons" style="color: white;">
+              menu
+              </i> -->
+              <div style="width: 90%; overflow: hidden; text-overflow: ellipsis;">
+            {{siteName}}
+          </div>
+          </div>
+          <!-- <div style="width: 10%;text-align: right;margin-left: 5px;">
+              <button class="LogoutBtn" (click)="logout()">Logout</button>
+    
+            </div> -->
+        </div>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div class="MainContainer">
+    <div class="search-filter-container">
+        
+      <div class="SearchOption"  style="width: 92%;">
+        <div class="SearchDiv">
+          <input class="valid" type="text" [(ngModel)]="search_text" placeholder="Search" name="name" />
+      </div>
+      </div>
+     
+  
+     </div>
+     <div class="ListContainer">
+  
+     <div class="ListItem">
+       <div class="SingleListItem">
+        <mat-card class="ListCard" *ngFor="let task of all_tasks |filter:search_text" (click)="showSubTask(task)">
+        <div style="width: 100%;padding: 10px;">
+  
+            <div style="display: inline-flex;width: 100%;">
+                <div class="SiteName">
+      
+                    <p style="margin: 0;">{{task.name}}</p>
+          
+                  </div>
+                  <!-- <div style="width: 20%;text-align: right;font-size: 1rem;">
+                      {{task.cmpltPercentage}} %
+                  </div> -->
+                </div>
+
+          <!-- <div class="SiteName">
+  
+            <p style="margin: 0;">{{task.name}}</p>
+  
+          </div> -->
+          
+          <div *ngIf="task.description != null || task.description != undefined" class="SiteDescription">
+  
+              <p style="margin: 0;">{{task.description}}</p>
+    
+            </div>
+  
+        
+        </div>
+        </mat-card>
+  
+       </div>
+     </div>
+  
+  
+    </div>
+  </div>
+  
+  </ion-content>

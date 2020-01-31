@@ -1,0 +1,147 @@
+import { Injectable } from '@angular/core';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ApiCallService {
+
+  constructor(
+    private http: HttpClient,
+
+  ) { }
+
+
+   //GET
+
+   public get(url) {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+      })
+    }
+    console.log(url);
+    return this.http.get(url,httpOptions);
+  }
+
+
+   public getAll(url,auth_token) {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization':'Token' + " " +auth_token
+      })
+    }
+    console.log(url);
+    return this.http.get(url,httpOptions);
+  }
+
+//POST
+public post(url,data,auth_token) {
+
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization':'Token' + " " +auth_token
+    })
+  }
+  console.log(url);
+  
+  return this.http.post(url,data,httpOptions);
+}
+
+public postWAu(url,data) {
+
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      // 'Authorization':'Token' + " " +auth_token
+    })
+  }
+  console.log(url);
+  
+  return this.http.post(url,data,httpOptions);
+}
+
+
+  //Image Upload Post
+  callPostApiForImage(url: string, data: any) {
+   
+    let formData: FormData = new FormData();
+
+    formData.append('image', data);
+    // formData.append('isSaveToLocal', 'false');
+
+    // console.log("url", url,data,options);
+
+    return this.http.post(url, formData)
+  }
+
+//PUT
+
+public put(url,data) {
+
+  console.log(url);
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      // 'Authorization':'Token' + " " +auth_token
+    })
+  }
+  return this.http.put(url,data,httpOptions);
+}
+
+public putWA(url,data,auth_token) {
+
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization':'Token' + " " +auth_token
+    })
+  }
+  console.log(url);
+  
+  return this.http.put(url,data,httpOptions);
+}
+
+public delete(url,data) {
+
+  console.log(url);
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      // 'Authorization':'Token' + " " +auth_token
+    })
+  }
+  
+  return this.http.delete(url,data);
+}
+public deleteWA(url,data,auth_token) {
+
+  console.log(url);
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization':'Token' + " " +auth_token
+    })
+  }
+  
+  return this.http.delete(url,data);
+}
+public deleteForData(url) {
+
+  console.log(url);
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      // 'Authorization':'Token' + " " +auth_token
+    })
+  }
+  
+  return this.http.delete(url);
+}
+
+}

@@ -1,0 +1,27 @@
+.TitleHeader{
+    width: 100%;
+    // padding: 0 10px 0 10px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    // background-color: blue;
+}
+.TitleText{
+    display: inline-flex;
+    text-align:left;
+    font-size: 1.3rem;
+    width: 81%;
+    color: #ffffff;
+    font-weight: 700;
+    align-items: center;
+}
+
+.inputCss{
+    border: 1px solid #000000;
+     color: black; 
+     width: 80%; 
+     margin-left: 10%; 
+    margin-right: 10%;
+    border-radius: 15px;
+    margin-top:20px;
+}

@@ -1,0 +1,121 @@
+.TitleHeader{
+    width: 100%;
+    // padding: 0 10px 0 10px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    // background-color: blue;
+}
+.TitleText{
+    display: inline-flex;
+    text-align:left;
+    font-size: 1.3rem;
+    width: 80%;
+    color: #ffffff;
+    font-weight: 700;
+    align-items: center;
+}
+.TitleSider{
+    display: inline-block;
+    text-align:right;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+
+}
+.BackButton{
+    background: url('../../assets/back_white.png') center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    outline: 0;
+    box-shadow: 0 0 0 0;
+    margin-right: 15px;
+}
+
+.search-filter-container{
+    width: 100%;
+    height: 45px;
+    // padding-left: 10px;
+    // border: 1px solid rgb(173, 172, 172);
+    // border-bottom: 1px solid rgb(173, 172, 172);
+    display: inline-flex;
+    align-items: center;
+    margin-top: 8px;
+}
+.SearchOption{
+    width: 90%;
+}
+.FilterOption{
+    width: 10%;
+}
+.SearchDiv{
+    width:100%;
+    height: 100%;
+    // border: 1px solid black;
+    // border-radius: 18px;
+    // padding: 3px 0 3px 0;
+    margin: 0 4% 0 4%;;
+}
+input.valid {
+    /* border-color: #28a745; */
+    // padding-right: 30px;
+    background-image: url('../../assets/FilterSearch.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 95% center;
+    height: 37px;
+    width: 100%;
+    padding-left: 20px;
+    /* padding-right: 20px; */
+    outline-width: 0;
+    border-width: 0;
+    font-size: 13px;
+    font-weight: 400;
+    background-color: #fff;
+    border-radius: 15px;
+    outline-color: white;
+ }
+ .MainContainer{
+     width: 100%;
+     background-color: #F1F4F8;
+    //  padding: 10px;
+     height: 100%;
+ }
+ .ListItem{
+     width: 100%;
+ }
+ .ListCard{
+     padding: 10px !important;
+    //  margin-bottom: 15px;
+    width: 92%;
+    margin: 4%;
+ }
+ .SingleListItem{
+     width: 100%;
+    //  min-height: 50px;
+
+ }
+ .SiteName{
+     font-size: 1rem;
+     font-weight: 600;
+     font-family: 'Roboto',sans-serif;
+ }
+ .SiteDescription{
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: 'Roboto',sans-serif;
+    color: rgb(83, 82, 82);
+}
+.LogoutBtn{
+ 
+    background-color: transparent;
+    color: #fff;	
+    font-family: 'Roboto',sans-serif;	
+    font-size: 15px;	
+    font-weight: 500;	
+    letter-spacing: 0.8px;	
+    line-height: 19px;
+  }

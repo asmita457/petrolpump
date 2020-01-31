@@ -1,0 +1,119 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-title class="Padding0" style="padding: 0 10px 0 10px !important;">
+        <div class="TitleHeader">
+          <div class="TitleText">
+            <div style="width: 10%;">
+            <button ion-button class="BackButton" (click)="goBackword()"></button>
+            <!-- <i class="material-icons" style="color: white;">
+              menu
+              </i> -->
+            </div>
+            <div style="width: 90%; overflow: hidden; text-overflow: ellipsis;">
+            {{taskName}}
+          </div>
+          </div>
+          <!-- <div style="width: 10%;text-align: right;margin-left: 5px;">
+            <button class="LogoutBtn" (click)="logout()">Logout</button>
+  
+          </div> -->
+        </div>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+    <div class="MainContainer">
+        <div class="search-filter-container">
+            
+          <div class="SearchOption"  style="width: 92%;">
+            <div class="SearchDiv">
+              <input class="valid" type="text" [(ngModel)]="search_text" placeholder="Search" name="name" />
+          </div>
+          </div>
+         
+      
+         </div>
+         <div class="ListContainer">
+      
+         <div class="ListItem">
+           <div class="SingleListItem">
+            <mat-card class="ListCard" *ngFor="let task of all_subtasks |filter:search_text;let i = index">
+            <div style="width: 100%;padding: 10px;">
+
+              <div style="display: inline-flex;width: 100%;margin-bottom: 10px;">
+                <div class="SiteName" style="width: 50%;overflow: hidden;text-overflow: ellipsis;">
+      
+                    <p style="margin: 0;">{{task.name}}</p>
+          
+                  </div>
+                  <div style="width: 50%;text-align: right;">
+                      <span *ngIf="task.status == 'NOT STARTED'" style="color: darkred;">{{task.status}}</span> 
+                      <span *ngIf="task.status == 'IN PROCESS'" style="color: orange;">{{task.status}}</span> 
+                      <span *ngIf="task.status == 'COMPLETED'" style="color: green;">{{task.status}}</span> 
+                  </div>
+                </div>
+
+                <mat-form-field *ngIf="updateAccess == 1">
+                    <mat-label>Update Status</mat-label>
+                    <mat-select [(ngModel)]="tempArray[i].status">
+                      <mat-option *ngFor="let stat of status" [value]="stat" (click)="updateStatus(i)">
+                        {{stat}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <table *ngIf="task.logs.length != 0">
+                      <tr>
+                        <th>Updated Date</th>
+                        <th>Updated By</th>
+                        <th>Status</th>
+                        
+                      </tr>
+                      <tr *ngFor="let lg of task.logs">
+                        <td>{{lg.updatedAt | date: 'dd/MM/yyyy' }}</td>
+                        <td tooltip="lg.updatedBy" style="width: 90px; overflow: hidden;text-overflow: ellipsis;">{{lg.updatedBy}}</td>
+                        <td>
+                            <span *ngIf="lg.status == 'NOT STARTED'" style="color: darkred;">{{lg.status}}</span> 
+                            <span *ngIf="lg.status == 'IN PROCESS'" style="color: orange;">{{lg.status}}</span> 
+                            <span *ngIf="lg.status == 'COMPLETED'" style="color: green;">{{lg.status}}</span> 
+                        </td>
+                       
+                      </tr>
+                      </table>
+
+                      <div style="width: 100%;text-align: left;" *ngIf="task.logs.length != 0">
+                      <button mat-raised-button class="ViewBtn" (click)="viewDetails(task)"><i class="material-icons">
+                          remove_red_eye
+                          </i>View</button>
+                    </div>
+                  <!-- <p class="StatusClass" *ngFor="let lg of task.logs"> {{lg.updatedAt | date: 'dd/MM/yyyy' }} &nbsp;&nbsp; {{lg.updatedBy}} &nbsp;&nbsp; 
+                    <span *ngIf="lg.status == 'Not Started'" style="color: darkred;">{{lg.status}}</span> 
+                    <span *ngIf="lg.status == 'In Progress'" style="color: orange;">{{lg.status}}</span> 
+                    <span *ngIf="lg.status == 'Completed'" style="color: green;">{{lg.status}}</span> 
+
+                   </p> -->
+      
+              <!-- <div class="SiteName">
+      
+                <p style="margin: 0;">{{task.name}}</p>
+      
+              </div>
+              
+              <div *ngIf="task.description != null || task.description != undefined" class="SiteDescription">
+      
+                  <p style="margin: 0;">{{task.description}}</p>
+        
+                </div> -->
+      
+            
+            </div>
+            </mat-card>
+      
+           </div>
+         </div>
+      
+      
+        </div>
+      </div>
+</ion-content>

@@ -7,14 +7,12 @@
         </ion-icon>
         <!-- <button ion-button class="BackButton" (click)="goBackword()" style="margin:10px"></button> -->
       </ion-col>
-      <ion-col size="7">
+      <ion-col size="10">
         <ion-label class="TitleHeader TitleText" style="font-size: 17px;">
           {{savetext}}
         </ion-label>
       </ion-col>
-      <ion-col size="3" (click)="addCustomerData()">
-        <!-- <ion-label class="TitleHeader saveText">Save</ion-label> -->
-      </ion-col>
+     
     </ion-row>
 
   </ion-toolbar>
@@ -93,7 +91,7 @@
 
   <ion-col size="10">
     <mat-form-field style="width:90%; margin-right:10%">
-      <input matInput class="form-control " name="email" required [(ngModel)]="userModel.email" #email="ngModel"
+      <input matInput class="form-control " name="email" [(ngModel)]="userModel.email" #email="ngModel"
         pattern="[a-zA-z]+$" placeholder="Email" />
       <mat-error>
         <div class="form-group">
@@ -128,15 +126,15 @@
       </ion-col>
       <ion-col size="10">
         <mat-form-field style="width:90%; margin-right:10%">
-          <input matInput class="form-control " name="address" required [(ngModel)]="userModel.address" #address="ngModel"
-            pattern="[a-zA-z]+$" placeholder="Address" />
-          <mat-error>
+          <textarea matInput class="form-control " name="address"  [(ngModel)]="userModel.address" #address="ngModel"
+            pattern="[a-zA-z]+$" placeholder="Address" ></textarea>
+          <!-- <mat-error>
             <div class="form-group">
               <div *ngIf="address.invalid && (address.dirty || address.touched)">
                 Address Is Requird
               </div>
             </div>
-          </mat-error>
+          </mat-error> -->
         </mat-form-field>
     
       </ion-col>
@@ -149,17 +147,10 @@
       </ion-col>
     
       <ion-col size="10">
-        <mat-form-field style="width:90%; margin-right:10%">
-          <textarea matInput class="form-control " name="note" required [(ngModel)]="userModel.note" #note="ngModel"
+        <mat-form-field style="width:90%; margin-right:10%;">
+          <textarea matInput class="form-control " name="note" [(ngModel)]="userModel.note" #note="ngModel"
             pattern="[a-zA-z]+$" placeholder="Note" ></textarea>
-          <!-- <mat-error>
-            <div class="form-group">
-              <div *ngIf="note.invalid && (note.dirty || note.touched)">
-                Note Is Requird
-              </div>
-            </div>
-          </mat-error> -->
-    
+        
         </mat-form-field>
       </ion-col>
     </ion-row>

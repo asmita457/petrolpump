@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\n  <!-- <ion-toolbar class=\"new-background-color\"> -->\n  <ion-toolbar color=\"primary\">\n\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title class=\"Padding0\" style=\"padding: 0;\">\n      <div class=\"TitleHeader\">\n        <div class=\"TitleText\">\n\n          &nbsp;&nbsp;&nbsp;\n          <div style=\"width: 80%; overflow: hidden; text-overflow: ellipsis;\">\n            Customers\n          </div>\n        </div>\n\n      </div>\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n<!-- <ion-content> -->\n<!-- <div class=\"search-filter-container\">\n\n  <div class=\"SearchOption\" style=\"width: 92%;\">\n    <div class=\"SearchDiv\">\n      <input class=\"valid\" type=\"text\" [(ngModel)]=\"search_text\" placeholder=\"Search\" name=\"name\" />\n    </div>\n  </div>\n\n\n</div> -->\n\n<ion-content>\n\n  <div align=\"center\">\n    <ion-searchbar type=\"text\" debounce=\"500\" (ionInput)=\"getItems($event)\"></ion-searchbar>\n    <ion-list *ngIf=\"isItemAvailable\">\n        <ion-item *ngFor=\"let item of items\">{{ item }}</ion-item>\n    </ion-list>\n  \n  </div>\n \n  <!-- <div align=\"center\" style=\"margin: 10px\">\n    <ion-searchbar placeholder=\"Search Contact\" style=\"border-radius: 10%;height: 60px; width: 80%\">\n    </ion-searchbar>\n  </div> -->\n  <div *ngFor=\"let daata of getCusstomers; index as i\">\n    <ion-item (click)=\"getCustomerDetailInfo(daata)\" style=\"margin-left:-20px\">\n      <div style=\"margin-left:30px\">\n        <img *ngIf=\"daata.imagepath == '' \" src=\"../../assets/acnt.png\"\n        style=\"width:30px; height: 30px;border-radius: 50% ; border: 1px solid #dfdcdc; margin-right:20px\" />\n      <img *ngIf=\"daata.imagepath != '' \" src=\"{{daata.imagepath}}\"\n        style=\"width:30px; height: 30px;border-radius: 50%;  border: 1px solid #817d7d; margin-right:20px\" />\n     \n    \n      </div>\n      {{daata.name}}\n    </ion-item>\n  </div>\n  <!-- <div style=\"margin:10%\">\n\n    <p *ngIf=\"aContact != empty || aContact != '' || aContact != null || aContact != undefined\">A</p>\n    <div *ngFor=\"let daata of aContact; index as i\">\n      <ion-item *ngIf=\"aContact != empty || aContact != '' || aContact != null || aContact != undefined\" (click)=\"getCustomerDetailInfo()\">\n        <button\n          style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">A</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"bContact != empty || bContact != '' || bContact != null || bContact != undefined\">B</p>\n    <div *ngFor=\"let daata of bContact; index as i\">\n      <ion-item *ngIf=\"bContact != empty || bContact != '' || bContact != null || bContact != undefined\">\n        <button\n          style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">B</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"cContact != empty || cContact != '' || cContact != null || cContact != undefined\">C</p>\n    <div *ngFor=\"let daata of cContact; index as i\">\n      <ion-item *ngIf=\"cContact != empty || cContact != '' || cContact != null || cContact != undefined\">\n        <button\n          style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">C</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"dContact != empty || dContact != '' || dContact != null || dContact != undefined\">D</p>\n    <div *ngFor=\"let daata of dContact; index as i\">\n      <ion-item *ngIf=\"dContact != empty || dContact != '' || dContact != null || dContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">D</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"eContact != null || eContact != empty || eContact != undefined || eContact.length != 0\">E</p>\n    <div *ngFor=\"let daata of eContact; index as i\">\n      <ion-item *ngIf=\"eContact != null || eContact != empty || eContact != undefined || eContact.length != 0\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">E</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"fContact != empty || fContact != '' || fContact != null || fContact != undefined\">F</p>\n    <div *ngFor=\"let daata of fContact; index as i\">\n      <ion-item *ngIf=\"fContact != empty || fContact != '' || fContact != null || fContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">F</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"gContact != empty || gContact != '' || gContact != null || gContact != undefined\">G</p>\n    <div *ngFor=\"let daata of gContact; index as i\">\n      <ion-item *ngIf=\"gContact != empty || gContact != '' || gContact != null || gContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">G</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"hContact != empty || hContact != '' || hContact != null || hContact != undefined\">H</p>\n    <div *ngFor=\"let daata of hContact; index as i\">\n      <ion-item *ngIf=\"hContact != empty || hContact != '' || hContact != null || hContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">H</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"iContact != empty || iContact != '' || iContact != null || iContact != undefined\">I</p>\n    <div *ngFor=\"let daata of iContact; index as i\">\n      <ion-item *ngIf=\"iContact != empty || iContact != '' || iContact != null || iContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">I</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"jContact != empty || jContact != '' || jContact != null || jContact != undefined\">J</p>\n    <div *ngFor=\"let daata of jContact; index as i\">\n      <ion-item *ngIf=\"jContact != empty || jContact != '' || jContact != null || jContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">J</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"kContact != empty || kContact != '' || kContact != null || kContact != undefined\">K</p>\n    <div *ngFor=\"let daata of kContact; index as i\">\n      <ion-item *ngIf=\"kContact != empty || kContact != '' || kContact != null || kContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">K</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"lContact != empty || lContact != '' || lContact != null || lContact != undefined\">L</p>\n    <div *ngFor=\"let daata of lContact; index as i\">\n      <ion-item *ngIf=\"lContact != empty || lContact != '' || lContact != null || lContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">L</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"mContact != empty || mContact != '' || mContact != null || mContact != undefined\">M</p>\n    <div *ngFor=\"let daata of mContact; index as i\">\n      <ion-item *ngIf=\"mContact != empty || mContact != '' || mContact != null || mContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">M</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"nContact != empty || nContact != '' || nContact != null || nContact != undefined\">N</p>\n    <div *ngFor=\"let daata of nContact; index as i\">\n      <ion-item *ngIf=\"nContact != empty || nContact != '' || nContact != null || nContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">N</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"oContact != empty || oContact != '' || oContact != null || oContact != undefined\">O</p>\n    <div *ngFor=\"let daata of oContact; index as i\">\n      <ion-item *ngIf=\"oContact != empty || oContact != '' || oContact != null || oContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">O</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"pContact != empty || pContact != '' || pContact != null || pContact != undefined\">P</p>\n    <div *ngFor=\"let daata of pContact; index as i\">\n      <ion-item *ngIf=\"pContact != empty || pContact != '' || pContact != null || pContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">P</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"qContact != empty || qContact != '' || qContact != null || qContact != undefined\">Q</p>\n    <div *ngFor=\"let daata of qContact; index as i\">\n      <ion-item *ngIf=\"qContact != empty || qContact != '' || qContact != null || qContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">Q</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"rContact != empty || rContact != '' || rContact != null || rContact != undefined\">R</p>\n    <div *ngFor=\"let daata of rContact; index as i\">\n      <ion-item *ngIf=\"rContact != empty || rContact != '' || rContact != null || rContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">R</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"sContact != empty || sContact != '' || sContact != null || sContact != undefined\">S</p>\n    <div *ngFor=\"let daata of sContact; index as i\">\n      <ion-item *ngIf=\"sContact != empty || sContact != '' || sContact != null || sContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">S</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"tContact != empty || tContact != '' || tContact != null || tContact != undefined\">T</p>\n    <div *ngFor=\"let daata of tContact; index as i\">\n      <ion-item *ngIf=\"tContact != empty || tContact != '' || tContact != null || tContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">T</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"uContact != empty || uContact != '' || uContact != null || uContact != undefined\">U</p>\n    <div *ngFor=\"let daata of uContact; index as i\">\n      <ion-item *ngIf=\"uContact != empty || uContact != '' || uContact != null || uContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">U</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"vContact != empty || vContact != '' || vContact != null || vContact != undefined\">V</p>\n    <div *ngFor=\"let daata of vContact; index as i\">\n      <ion-item *ngIf=\"vContact != empty || vContact != '' || vContact != null || vContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">V</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"wContact != empty || wContact != '' || wContact != null || wContact != undefined\">W</p>\n    <div *ngFor=\"let daata of wContact; index as i\">\n      <ion-item *ngIf=\"wContact != empty || wContact != '' || wContact != null || wContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">W</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"xContact != empty || xContact != '' || xContact != null || xContact != undefined\">X</p>\n    <div *ngFor=\"let daata of xContact; index as i\">\n      <ion-item *ngIf=\"xContact != empty || xContact != '' || xContact != null || xContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">X</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"yContact != empty || yContact != '' || yContact != null || yContact != undefined\">Y</p>\n    <div *ngFor=\"let daata of yContact; index as i\">\n      <ion-item *ngIf=\"yContact != empty || yContact != '' || yContact != null || yContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">Y</button>\n        {{daata}}\n      </ion-item>\n    </div>\n\n    <p *ngIf=\"zContact != empty || zContact != '' || zContact != null || zContact != undefined\">Z</p>\n    <div *ngFor=\"let daata of zContact; index as i\">\n      <ion-item *ngIf=\"zContact != empty || zContact != '' || zContact != null || zContact != undefined\">\n        <button style=\"width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;\">Z</button>\n        {{daata}}\n      </ion-item>\n\n    </div>\n\n  </div> -->\n\n  <ion-item>\n  </ion-item>\n</ion-content>\n\n\n<button mat-raised-button class=\"FixedButton\" (click)=\"addCustomaer()\"> <img\n    src=\"../../assets/AddRestro.png\" width=\"30\" height=\"30\"> </button>\n<!-- </ion-content> -->";
+    __webpack_exports__["default"] = "<ion-header>\n  <!-- <ion-toolbar class=\"new-background-color\"> -->\n  <ion-toolbar color=\"primary\">\n\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title class=\"Padding0\" style=\"padding: 0;\">\n      <div class=\"TitleHeader\">\n        <div class=\"TitleText\">\n\n          <div style=\"width: 80%; font-size:17 \">\n            Customers\n          </div>\n        </div>\n\n      </div>\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n\n  <div align=\"lefft\" style=\"margin: 10px\">\n    <ion-searchbar type=\"text\" debounce=\"500\" (ionInput)=\"getItems($event)\"></ion-searchbar>\n    <ion-list *ngIf=\"isItemAvailable\">\n        <ion-item *ngFor=\"let item of items\">{{ item }}</ion-item>\n    </ion-list>\n  \n  </div>\n \n  <div *ngFor=\"let daata of getCusstomers; index as i\">\n    <ion-item (click)=\"getCustomerDetailInfo(daata)\" style=\"margin-left:-20px\">\n      <div style=\"margin-left:30px\">\n       \n    <button style=\"width:35px; height: 35px; border-radius: 50%;margin-right: 15px ; color: #ffffff\" [ngClass]=\"(i % 2 == 0) ? 'odd' : 'even' \">{{daata.name.charAt(0) | uppercase}}</button>\n      </div>\n      {{daata.name | titlecase}}\n    </ion-item>\n  </div>\n \n  <ion-item>\n  </ion-item>\n\n\n  <div class=\"editCss\" (click)=\"addCustomaer()\">\n   \n\n      <ion-label style=\"color:white;\" align=\"center\">Add Customer</ion-label>\n    \n    </div>\n\n<!-- <button mat-raised-button class=\"FixedButton\" (click)=\"addCustomaer()\"> <img\n  src=\"../../assets/AddRestro.png\" width=\"30\" height=\"30\"> </button> -->\n</ion-content>\n\n";
     /***/
   },
 
@@ -186,7 +186,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".TitleHeader {\n  width: 100%;\n  height: 50px;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-align: center;\n          align-items: center;\n}\n\n.TitleText {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  text-align: left;\n  font-size: 1.3rem;\n  width: 81%;\n  color: #ffffff;\n  font-weight: 700;\n  -webkit-box-align: center;\n          align-items: center;\n}\n\n.TitleSider {\n  display: inline-block;\n  text-align: right;\n  font-size: 1rem;\n  font-weight: 600;\n  width: 100%;\n}\n\n.BackButton {\n  background: url('back_white.png') center;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  width: 30px;\n  height: 30px;\n  outline: 0;\n  box-shadow: 0 0 0 0;\n  margin-right: 15px;\n}\n\n.search-filter-container {\n  width: 100%;\n  height: 45px;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-align: center;\n          align-items: center;\n  margin-top: 8px;\n}\n\n.SearchOption {\n  width: 90%;\n}\n\n.FilterOption {\n  width: 10%;\n}\n\n.SearchDiv {\n  width: 100%;\n  height: 100%;\n  margin: 0 4% 0 4%;\n}\n\ninput.valid {\n  /* border-color: #28a745; */\n  background-image: url('FilterSearch.png');\n  background-repeat: no-repeat;\n  background-size: 20px 20px;\n  background-position: 95% center;\n  height: 37px;\n  width: 100%;\n  padding-left: 20px;\n  /* padding-right: 20px; */\n  outline-width: 0;\n  border-width: 0;\n  font-size: 13px;\n  font-weight: 400;\n  background-color: #fff;\n  border-radius: 15px;\n  outline-color: white;\n}\n\n.MainContainer {\n  width: 100%;\n  background-color: #F1F4F8;\n  height: 100%;\n}\n\n.ListItem {\n  width: 100%;\n}\n\n.ListCard {\n  width: 92%;\n  margin: 4%;\n}\n\n.SingleListItem {\n  width: 100%;\n}\n\n.SiteName {\n  font-size: 1rem;\n  font-weight: 600;\n  font-family: \"Roboto\", sans-serif;\n}\n\n.SiteDescription {\n  font-size: 0.8rem;\n  font-weight: 500;\n  font-family: \"Roboto\", sans-serif;\n  color: #535252;\n}\n\n.LogoutBtn {\n  background-color: transparent;\n  color: #fff;\n  font-family: \"Roboto\", sans-serif;\n  font-size: 15px;\n  font-weight: 500;\n  letter-spacing: 0.8px;\n  line-height: 19px;\n}\n\n.FixedButton {\n  width: 65px;\n  height: 65px;\n  position: fixed;\n  bottom: 20px;\n  right: 20px;\n  border-radius: 50%;\n  color: white;\n  z-index: 10;\n  background-color: #3255f3;\n}\n\n.new-background-color {\n  --background: #d2691e;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2FycmF5cG9pbnRlci9EZXNrdG9wL3BldHJvbHB1bXBhcHAvc3JjL2FwcC9zaXRlcy9zaXRlcy5wYWdlLnNjc3MiLCJzcmMvYXBwL3NpdGVzL3NpdGVzLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7RUFFQSxZQUFBO0VBQ0EsMkJBQUE7RUFBQSxvQkFBQTtFQUNBLHlCQUFBO1VBQUEsbUJBQUE7QUNBSjs7QURHQTtFQUNJLDJCQUFBO0VBQUEsb0JBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0EsVUFBQTtFQUNBLGNBQUE7RUFDQSxnQkFBQTtFQUNBLHlCQUFBO1VBQUEsbUJBQUE7QUNBSjs7QURFQTtFQUNJLHFCQUFBO0VBQ0EsaUJBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0FDQ0o7O0FERUE7RUFDSSx3Q0FBQTtFQUNBLHNCQUFBO0VBQ0EsMkJBQUE7RUFDQSw0QkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsVUFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7QUNDSjs7QURFQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBSUEsMkJBQUE7RUFBQSxvQkFBQTtFQUNBLHlCQUFBO1VBQUEsbUJBQUE7RUFDQSxlQUFBO0FDRko7O0FESUE7RUFDSSxVQUFBO0FDREo7O0FER0E7RUFDSSxVQUFBO0FDQUo7O0FERUE7RUFDSSxXQUFBO0VBQ0EsWUFBQTtFQUlBLGlCQUFBO0FDRko7O0FESUE7RUFDSSwyQkFBQTtFQUVBLHlDQUFBO0VBQ0EsNEJBQUE7RUFDQSwwQkFBQTtFQUNBLCtCQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLHlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxlQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0Esc0JBQUE7RUFDQSxtQkFBQTtFQUNBLG9CQUFBO0FDRko7O0FESUM7RUFDSSxXQUFBO0VBQ0EseUJBQUE7RUFFQSxZQUFBO0FDRkw7O0FESUM7RUFDSSxXQUFBO0FDREw7O0FER0M7RUFHRyxVQUFBO0VBQ0EsVUFBQTtBQ0ZKOztBRElDO0VBQ0ksV0FBQTtBQ0RMOztBREtDO0VBQ0ksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsaUNBQUE7QUNGTDs7QURJQztFQUNHLGlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQ0FBQTtFQUNBLGNBQUE7QUNESjs7QURHQTtFQUVJLDZCQUFBO0VBQ0EsV0FBQTtFQUNBLGlDQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EscUJBQUE7RUFDQSxpQkFBQTtBQ0RKOztBREdFO0VBQ0UsV0FBQTtFQUNBLFlBQUE7RUFDRCxlQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0VBQ0EseUJBQUE7QUNBSDs7QURJQTtFQUNJLHFCQUFBO0FDREoiLCJmaWxlIjoic3JjL2FwcC9zaXRlcy9zaXRlcy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuVGl0bGVIZWFkZXJ7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgLy8gcGFkZGluZzogMCAxMHB4IDAgMTBweDtcbiAgICBoZWlnaHQ6IDUwcHg7XG4gICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiBibHVlO1xufVxuLlRpdGxlVGV4dHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICB0ZXh0LWFsaWduOmxlZnQ7XG4gICAgZm9udC1zaXplOiAxLjNyZW07XG4gICAgd2lkdGg6IDgxJTtcbiAgICBjb2xvcjogI2ZmZmZmZjtcbiAgICBmb250LXdlaWdodDogNzAwO1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG4uVGl0bGVTaWRlcntcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgdGV4dC1hbGlnbjpyaWdodDtcbiAgICBmb250LXNpemU6IDFyZW07XG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICB3aWR0aDogMTAwJTtcblxufVxuLkJhY2tCdXR0b257XG4gICAgYmFja2dyb3VuZDogdXJsKCcuLi8uLi9hc3NldHMvYmFja193aGl0ZS5wbmcnKSBjZW50ZXI7XG4gICAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcbiAgICB3aWR0aDogMzBweDtcbiAgICBoZWlnaHQ6IDMwcHg7XG4gICAgb3V0bGluZTogMDtcbiAgICBib3gtc2hhZG93OiAwIDAgMCAwO1xuICAgIG1hcmdpbi1yaWdodDogMTVweDtcbn1cblxuLnNlYXJjaC1maWx0ZXItY29udGFpbmVye1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogNDVweDtcbiAgICAvLyBwYWRkaW5nLWxlZnQ6IDEwcHg7XG4gICAgLy8gYm9yZGVyOiAxcHggc29saWQgcmdiKDE3MywgMTcyLCAxNzIpO1xuICAgIC8vIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCByZ2IoMTczLCAxNzIsIDE3Mik7XG4gICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICBtYXJnaW4tdG9wOiA4cHg7XG59XG4uU2VhcmNoT3B0aW9ue1xuICAgIHdpZHRoOiA5MCU7XG59XG4uRmlsdGVyT3B0aW9ue1xuICAgIHdpZHRoOiAxMCU7XG59XG4uU2VhcmNoRGl2e1xuICAgIHdpZHRoOjEwMCU7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICAgIC8vIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xuICAgIC8vIGJvcmRlci1yYWRpdXM6IDE4cHg7XG4gICAgLy8gcGFkZGluZzogM3B4IDAgM3B4IDA7XG4gICAgbWFyZ2luOiAwIDQlIDAgNCU7O1xufVxuaW5wdXQudmFsaWQge1xuICAgIC8qIGJvcmRlci1jb2xvcjogIzI4YTc0NTsgKi9cbiAgICAvLyBwYWRkaW5nLXJpZ2h0OiAzMHB4O1xuICAgIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnLi4vLi4vYXNzZXRzL0ZpbHRlclNlYXJjaC5wbmcnKTtcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICAgIGJhY2tncm91bmQtc2l6ZTogMjBweCAyMHB4O1xuICAgIGJhY2tncm91bmQtcG9zaXRpb246IDk1JSBjZW50ZXI7XG4gICAgaGVpZ2h0OiAzN3B4O1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIHBhZGRpbmctbGVmdDogMjBweDtcbiAgICAvKiBwYWRkaW5nLXJpZ2h0OiAyMHB4OyAqL1xuICAgIG91dGxpbmUtd2lkdGg6IDA7XG4gICAgYm9yZGVyLXdpZHRoOiAwO1xuICAgIGZvbnQtc2l6ZTogMTNweDtcbiAgICBmb250LXdlaWdodDogNDAwO1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gICAgYm9yZGVyLXJhZGl1czogMTVweDtcbiAgICBvdXRsaW5lLWNvbG9yOiB3aGl0ZTtcbiB9XG4gLk1haW5Db250YWluZXJ7XG4gICAgIHdpZHRoOiAxMDAlO1xuICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRjFGNEY4O1xuICAgIC8vICBwYWRkaW5nOiAxMHB4O1xuICAgICBoZWlnaHQ6IDEwMCU7XG4gfVxuIC5MaXN0SXRlbXtcbiAgICAgd2lkdGg6IDEwMCU7XG4gfVxuIC5MaXN0Q2FyZHtcbiAgICAvLyAgcGFkZGluZzogMTBweCAhaW1wb3J0YW50O1xuICAgIC8vICBtYXJnaW4tYm90dG9tOiAxNXB4O1xuICAgIHdpZHRoOiA5MiU7XG4gICAgbWFyZ2luOiA0JTtcbiB9XG4gLlNpbmdsZUxpc3RJdGVte1xuICAgICB3aWR0aDogMTAwJTtcbiAgICAvLyAgbWluLWhlaWdodDogNTBweDtcblxuIH1cbiAuU2l0ZU5hbWV7XG4gICAgIGZvbnQtc2l6ZTogMXJlbTtcbiAgICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICAgZm9udC1mYW1pbHk6ICdSb2JvdG8nLHNhbnMtc2VyaWY7XG4gfVxuIC5TaXRlRGVzY3JpcHRpb257XG4gICAgZm9udC1zaXplOiAwLjhyZW07XG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgICBmb250LWZhbWlseTogJ1JvYm90bycsc2Fucy1zZXJpZjtcbiAgICBjb2xvcjogcmdiKDgzLCA4MiwgODIpO1xufVxuLkxvZ291dEJ0bntcblxuICAgIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xuICAgIGNvbG9yOiAjZmZmO1x0XG4gICAgZm9udC1mYW1pbHk6ICdSb2JvdG8nLHNhbnMtc2VyaWY7XHRcbiAgICBmb250LXNpemU6IDE1cHg7XHRcbiAgICBmb250LXdlaWdodDogNTAwO1x0XG4gICAgbGV0dGVyLXNwYWNpbmc6IDAuOHB4O1x0XG4gICAgbGluZS1oZWlnaHQ6IDE5cHg7XG4gIH1cbiAgLkZpeGVkQnV0dG9ue1xuICAgIHdpZHRoOjY1cHg7XG4gICAgaGVpZ2h0OiA2NXB4O1xuICAgcG9zaXRpb246IGZpeGVkO1xuICAgYm90dG9tOiAyMHB4O1xuICAgcmlnaHQ6IDIwcHg7XG4gICBib3JkZXItcmFkaXVzOjUwJTtcbiAgIGNvbG9yOndoaXRlO1xuICAgei1pbmRleDogMTA7XG4gICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzI1NWYzO1xufVxuXG5cbi5uZXctYmFja2dyb3VuZC1jb2xvcntcbiAgICAtLWJhY2tncm91bmQ6ICNkMjY5MWU7XG59IiwiLlRpdGxlSGVhZGVyIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogNTBweDtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG5cbi5UaXRsZVRleHQge1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgZm9udC1zaXplOiAxLjNyZW07XG4gIHdpZHRoOiA4MSU7XG4gIGNvbG9yOiAjZmZmZmZmO1xuICBmb250LXdlaWdodDogNzAwO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xufVxuXG4uVGl0bGVTaWRlciB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gIGZvbnQtc2l6ZTogMXJlbTtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5CYWNrQnV0dG9uIHtcbiAgYmFja2dyb3VuZDogdXJsKFwiLi4vLi4vYXNzZXRzL2JhY2tfd2hpdGUucG5nXCIpIGNlbnRlcjtcbiAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyO1xuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICB3aWR0aDogMzBweDtcbiAgaGVpZ2h0OiAzMHB4O1xuICBvdXRsaW5lOiAwO1xuICBib3gtc2hhZG93OiAwIDAgMCAwO1xuICBtYXJnaW4tcmlnaHQ6IDE1cHg7XG59XG5cbi5zZWFyY2gtZmlsdGVyLWNvbnRhaW5lciB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDQ1cHg7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBtYXJnaW4tdG9wOiA4cHg7XG59XG5cbi5TZWFyY2hPcHRpb24ge1xuICB3aWR0aDogOTAlO1xufVxuXG4uRmlsdGVyT3B0aW9uIHtcbiAgd2lkdGg6IDEwJTtcbn1cblxuLlNlYXJjaERpdiB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIG1hcmdpbjogMCA0JSAwIDQlO1xufVxuXG5pbnB1dC52YWxpZCB7XG4gIC8qIGJvcmRlci1jb2xvcjogIzI4YTc0NTsgKi9cbiAgYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiLi4vLi4vYXNzZXRzL0ZpbHRlclNlYXJjaC5wbmdcIik7XG4gIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XG4gIGJhY2tncm91bmQtc2l6ZTogMjBweCAyMHB4O1xuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiA5NSUgY2VudGVyO1xuICBoZWlnaHQ6IDM3cHg7XG4gIHdpZHRoOiAxMDAlO1xuICBwYWRkaW5nLWxlZnQ6IDIwcHg7XG4gIC8qIHBhZGRpbmctcmlnaHQ6IDIwcHg7ICovXG4gIG91dGxpbmUtd2lkdGg6IDA7XG4gIGJvcmRlci13aWR0aDogMDtcbiAgZm9udC1zaXplOiAxM3B4O1xuICBmb250LXdlaWdodDogNDAwO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xuICBib3JkZXItcmFkaXVzOiAxNXB4O1xuICBvdXRsaW5lLWNvbG9yOiB3aGl0ZTtcbn1cblxuLk1haW5Db250YWluZXIge1xuICB3aWR0aDogMTAwJTtcbiAgYmFja2dyb3VuZC1jb2xvcjogI0YxRjRGODtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuXG4uTGlzdEl0ZW0ge1xuICB3aWR0aDogMTAwJTtcbn1cblxuLkxpc3RDYXJkIHtcbiAgd2lkdGg6IDkyJTtcbiAgbWFyZ2luOiA0JTtcbn1cblxuLlNpbmdsZUxpc3RJdGVtIHtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5TaXRlTmFtZSB7XG4gIGZvbnQtc2l6ZTogMXJlbTtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgZm9udC1mYW1pbHk6IFwiUm9ib3RvXCIsIHNhbnMtc2VyaWY7XG59XG5cbi5TaXRlRGVzY3JpcHRpb24ge1xuICBmb250LXNpemU6IDAuOHJlbTtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgZm9udC1mYW1pbHk6IFwiUm9ib3RvXCIsIHNhbnMtc2VyaWY7XG4gIGNvbG9yOiAjNTM1MjUyO1xufVxuXG4uTG9nb3V0QnRuIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGNvbG9yOiAjZmZmO1xuICBmb250LWZhbWlseTogXCJSb2JvdG9cIiwgc2Fucy1zZXJpZjtcbiAgZm9udC1zaXplOiAxNXB4O1xuICBmb250LXdlaWdodDogNTAwO1xuICBsZXR0ZXItc3BhY2luZzogMC44cHg7XG4gIGxpbmUtaGVpZ2h0OiAxOXB4O1xufVxuXG4uRml4ZWRCdXR0b24ge1xuICB3aWR0aDogNjVweDtcbiAgaGVpZ2h0OiA2NXB4O1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGJvdHRvbTogMjBweDtcbiAgcmlnaHQ6IDIwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgY29sb3I6IHdoaXRlO1xuICB6LWluZGV4OiAxMDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzMyNTVmMztcbn1cblxuLm5ldy1iYWNrZ3JvdW5kLWNvbG9yIHtcbiAgLS1iYWNrZ3JvdW5kOiAjZDI2OTFlO1xufSJdfQ== */";
+    __webpack_exports__["default"] = ".TitleHeader {\n  width: 100%;\n  height: 50px;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-align: center;\n          align-items: center;\n}\n\n.TitleText {\n  display: -webkit-inline-box;\n  display: inline-flex;\n  text-align: left;\n  font-size: 19px;\n  width: 81%;\n  color: #ffffff;\n  -webkit-box-align: center;\n          align-items: center;\n}\n\n.TitleSider {\n  display: inline-block;\n  text-align: right;\n  width: 100%;\n}\n\n.BackButton {\n  background: url('back_white.png') center;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  width: 30px;\n  height: 30px;\n  outline: 0;\n  box-shadow: 0 0 0 0;\n  margin-right: 15px;\n}\n\n.search-filter-container {\n  width: 100%;\n  height: 45px;\n  display: -webkit-inline-box;\n  display: inline-flex;\n  -webkit-box-align: center;\n          align-items: center;\n  margin-top: 8px;\n}\n\n.SearchOption {\n  width: 90%;\n}\n\n.FilterOption {\n  width: 10%;\n}\n\n.SearchDiv {\n  width: 100%;\n  height: 100%;\n  margin: 0 4% 0 4%;\n}\n\ninput.valid {\n  /* border-color: #28a745; */\n  background-image: url('FilterSearch.png');\n  background-repeat: no-repeat;\n  background-size: 20px 20px;\n  background-position: 95% center;\n  height: 37px;\n  width: 100%;\n  padding-left: 20px;\n  /* padding-right: 20px; */\n  outline-width: 0;\n  border-width: 0;\n  font-size: 13px;\n  font-weight: 400;\n  background-color: #fff;\n  border-radius: 15px;\n  outline-color: white;\n}\n\n.MainContainer {\n  width: 100%;\n  background-color: #F1F4F8;\n  height: 100%;\n}\n\n.ListItem {\n  width: 100%;\n}\n\n.ListCard {\n  width: 92%;\n  margin: 4%;\n}\n\n.SingleListItem {\n  width: 100%;\n}\n\n.SiteName {\n  font-size: 1rem;\n  font-weight: 600;\n  font-family: \"Roboto\", sans-serif;\n}\n\n.SiteDescription {\n  font-size: 0.8rem;\n  font-weight: 500;\n  font-family: \"Roboto\", sans-serif;\n  color: #535252;\n}\n\n.LogoutBtn {\n  background-color: transparent;\n  color: #fff;\n  font-family: \"Roboto\", sans-serif;\n  font-size: 15px;\n  font-weight: 500;\n  letter-spacing: 0.8px;\n  line-height: 19px;\n}\n\n.FixedButton {\n  width: 65px;\n  height: 65px;\n  position: fixed;\n  bottom: 20px;\n  right: 20px;\n  border-radius: 50%;\n  color: white;\n  z-index: 10;\n  background-color: #3255f3;\n}\n\n.new-background-color {\n  --background: #d2691e;\n}\n\n.odd {\n  background-color: #f08132;\n}\n\n.even {\n  background-color: #ee38b7;\n}\n\n.editCss {\n  width: 50%;\n  margin-left: 45%;\n  margin-right: 10px;\n  background-color: #3255f3;\n  display: inline-block;\n  text-align: center;\n  padding: 11px;\n  position: fixed;\n  bottom: 10px;\n  right: 10px;\n  border-radius: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2FycmF5cG9pbnRlci9EZXNrdG9wL3BldHJvbHB1bXBhcHAvc3JjL2FwcC9zaXRlcy9zaXRlcy5wYWdlLnNjc3MiLCJzcmMvYXBwL3NpdGVzL3NpdGVzLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7RUFFQSxZQUFBO0VBQ0EsMkJBQUE7RUFBQSxvQkFBQTtFQUNBLHlCQUFBO1VBQUEsbUJBQUE7QUNBSjs7QURHQTtFQUNJLDJCQUFBO0VBQUEsb0JBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxVQUFBO0VBQ0EsY0FBQTtFQUVBLHlCQUFBO1VBQUEsbUJBQUE7QUNESjs7QURHQTtFQUNJLHFCQUFBO0VBQ0EsaUJBQUE7RUFHQSxXQUFBO0FDRko7O0FES0E7RUFDSSx3Q0FBQTtFQUNBLHNCQUFBO0VBQ0EsMkJBQUE7RUFDQSw0QkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsVUFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7QUNGSjs7QURLQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBSUEsMkJBQUE7RUFBQSxvQkFBQTtFQUNBLHlCQUFBO1VBQUEsbUJBQUE7RUFDQSxlQUFBO0FDTEo7O0FET0E7RUFDSSxVQUFBO0FDSko7O0FETUE7RUFDSSxVQUFBO0FDSEo7O0FES0E7RUFDSSxXQUFBO0VBQ0EsWUFBQTtFQUlBLGlCQUFBO0FDTEo7O0FET0E7RUFDSSwyQkFBQTtFQUVBLHlDQUFBO0VBQ0EsNEJBQUE7RUFDQSwwQkFBQTtFQUNBLCtCQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLHlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxlQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0Esc0JBQUE7RUFDQSxtQkFBQTtFQUNBLG9CQUFBO0FDTEo7O0FET0M7RUFDSSxXQUFBO0VBQ0EseUJBQUE7RUFFQSxZQUFBO0FDTEw7O0FET0M7RUFDSSxXQUFBO0FDSkw7O0FETUM7RUFHRyxVQUFBO0VBQ0EsVUFBQTtBQ0xKOztBRE9DO0VBQ0ksV0FBQTtBQ0pMOztBRFFDO0VBQ0ksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsaUNBQUE7QUNMTDs7QURPQztFQUNHLGlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQ0FBQTtFQUNBLGNBQUE7QUNKSjs7QURNQTtFQUVJLDZCQUFBO0VBQ0EsV0FBQTtFQUNBLGlDQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EscUJBQUE7RUFDQSxpQkFBQTtBQ0pKOztBRE1FO0VBQ0UsV0FBQTtFQUNBLFlBQUE7RUFDRCxlQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0VBQ0EseUJBQUE7QUNISDs7QURPQTtFQUNJLHFCQUFBO0FDSko7O0FET0E7RUFDSSx5QkFBQTtBQ0pKOztBRE1FO0VBQ0UseUJBQUE7QUNISjs7QURRQTtFQUNJLFVBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EseUJBQUE7RUFDQSxxQkFBQTtFQUNBLGtCQUFBO0VBQ0YsYUFBQTtFQUNBLGVBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQTtFQUNFLG1CQUFBO0FDTEoiLCJmaWxlIjoic3JjL2FwcC9zaXRlcy9zaXRlcy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuVGl0bGVIZWFkZXJ7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgLy8gcGFkZGluZzogMCAxMHB4IDAgMTBweDtcbiAgICBoZWlnaHQ6IDUwcHg7XG4gICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiBibHVlO1xufVxuLlRpdGxlVGV4dHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICB0ZXh0LWFsaWduOmxlZnQ7XG4gICAgZm9udC1zaXplOiAxOXB4O1xuICAgIHdpZHRoOiA4MSU7XG4gICAgY29sb3I6ICNmZmZmZmY7XG4gICAgLy8gZm9udC13ZWlnaHQ6IDcwMDtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xufVxuLlRpdGxlU2lkZXJ7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIHRleHQtYWxpZ246cmlnaHQ7XG4gICAgLy8gZm9udC1zaXplOiAxcmVtO1xuICAgIC8vIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgd2lkdGg6IDEwMCU7XG5cbn1cbi5CYWNrQnV0dG9ue1xuICAgIGJhY2tncm91bmQ6IHVybCgnLi4vLi4vYXNzZXRzL2JhY2tfd2hpdGUucG5nJykgY2VudGVyO1xuICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyO1xuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XG4gICAgd2lkdGg6IDMwcHg7XG4gICAgaGVpZ2h0OiAzMHB4O1xuICAgIG91dGxpbmU6IDA7XG4gICAgYm94LXNoYWRvdzogMCAwIDAgMDtcbiAgICBtYXJnaW4tcmlnaHQ6IDE1cHg7XG59XG5cbi5zZWFyY2gtZmlsdGVyLWNvbnRhaW5lcntcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDQ1cHg7XG4gICAgLy8gcGFkZGluZy1sZWZ0OiAxMHB4O1xuICAgIC8vIGJvcmRlcjogMXB4IHNvbGlkIHJnYigxNzMsIDE3MiwgMTcyKTtcbiAgICAvLyBib3JkZXItYm90dG9tOiAxcHggc29saWQgcmdiKDE3MywgMTcyLCAxNzIpO1xuICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgbWFyZ2luLXRvcDogOHB4O1xufVxuLlNlYXJjaE9wdGlvbntcbiAgICB3aWR0aDogOTAlO1xufVxuLkZpbHRlck9wdGlvbntcbiAgICB3aWR0aDogMTAlO1xufVxuLlNlYXJjaERpdntcbiAgICB3aWR0aDoxMDAlO1xuICAgIGhlaWdodDogMTAwJTtcbiAgICAvLyBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcbiAgICAvLyBib3JkZXItcmFkaXVzOiAxOHB4O1xuICAgIC8vIHBhZGRpbmc6IDNweCAwIDNweCAwO1xuICAgIG1hcmdpbjogMCA0JSAwIDQlOztcbn1cbmlucHV0LnZhbGlkIHtcbiAgICAvKiBib3JkZXItY29sb3I6ICMyOGE3NDU7ICovXG4gICAgLy8gcGFkZGluZy1yaWdodDogMzBweDtcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4uLy4uL2Fzc2V0cy9GaWx0ZXJTZWFyY2gucG5nJyk7XG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcbiAgICBiYWNrZ3JvdW5kLXNpemU6IDIwcHggMjBweDtcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiA5NSUgY2VudGVyO1xuICAgIGhlaWdodDogMzdweDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHg7XG4gICAgLyogcGFkZGluZy1yaWdodDogMjBweDsgKi9cbiAgICBvdXRsaW5lLXdpZHRoOiAwO1xuICAgIGJvcmRlci13aWR0aDogMDtcbiAgICBmb250LXNpemU6IDEzcHg7XG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xuICAgIGJvcmRlci1yYWRpdXM6IDE1cHg7XG4gICAgb3V0bGluZS1jb2xvcjogd2hpdGU7XG4gfVxuIC5NYWluQ29udGFpbmVye1xuICAgICB3aWR0aDogMTAwJTtcbiAgICAgYmFja2dyb3VuZC1jb2xvcjogI0YxRjRGODtcbiAgICAvLyAgcGFkZGluZzogMTBweDtcbiAgICAgaGVpZ2h0OiAxMDAlO1xuIH1cbiAuTGlzdEl0ZW17XG4gICAgIHdpZHRoOiAxMDAlO1xuIH1cbiAuTGlzdENhcmR7XG4gICAgLy8gIHBhZGRpbmc6IDEwcHggIWltcG9ydGFudDtcbiAgICAvLyAgbWFyZ2luLWJvdHRvbTogMTVweDtcbiAgICB3aWR0aDogOTIlO1xuICAgIG1hcmdpbjogNCU7XG4gfVxuIC5TaW5nbGVMaXN0SXRlbXtcbiAgICAgd2lkdGg6IDEwMCU7XG4gICAgLy8gIG1pbi1oZWlnaHQ6IDUwcHg7XG5cbiB9XG4gLlNpdGVOYW1le1xuICAgICBmb250LXNpemU6IDFyZW07XG4gICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgIGZvbnQtZmFtaWx5OiAnUm9ib3RvJyxzYW5zLXNlcmlmO1xuIH1cbiAuU2l0ZURlc2NyaXB0aW9ue1xuICAgIGZvbnQtc2l6ZTogMC44cmVtO1xuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XG4gICAgZm9udC1mYW1pbHk6ICdSb2JvdG8nLHNhbnMtc2VyaWY7XG4gICAgY29sb3I6IHJnYig4MywgODIsIDgyKTtcbn1cbi5Mb2dvdXRCdG57XG5cbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICBjb2xvcjogI2ZmZjtcdFxuICAgIGZvbnQtZmFtaWx5OiAnUm9ib3RvJyxzYW5zLXNlcmlmO1x0XG4gICAgZm9udC1zaXplOiAxNXB4O1x0XG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcdFxuICAgIGxldHRlci1zcGFjaW5nOiAwLjhweDtcdFxuICAgIGxpbmUtaGVpZ2h0OiAxOXB4O1xuICB9XG4gIC5GaXhlZEJ1dHRvbntcbiAgICB3aWR0aDo2NXB4O1xuICAgIGhlaWdodDogNjVweDtcbiAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgIGJvdHRvbTogMjBweDtcbiAgIHJpZ2h0OiAyMHB4O1xuICAgYm9yZGVyLXJhZGl1czo1MCU7XG4gICBjb2xvcjp3aGl0ZTtcbiAgIHotaW5kZXg6IDEwO1xuICAgYmFja2dyb3VuZC1jb2xvcjogIzMyNTVmMztcbn1cblxuXG4ubmV3LWJhY2tncm91bmQtY29sb3J7XG4gICAgLS1iYWNrZ3JvdW5kOiAjZDI2OTFlO1xufVxuXG4ub2Rke1xuICAgIGJhY2tncm91bmQtY29sb3I6I2YwODEzMjtcbiAgfVxuICAuZXZlbntcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjM4LCA1NiwgMTgzKTtcbiAgfVxuXG5cblxuLmVkaXRDc3N7ICAgXG4gICAgd2lkdGg6IDUwJTtcbiAgICBtYXJnaW4tbGVmdDo0NSU7XG4gICAgbWFyZ2luLXJpZ2h0OjEwcHg7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzMyNTVmMztcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwYWRkaW5nOjExcHg7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgYm90dG9tOiAxMHB4O1xuICByaWdodDogMTBweDtcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xuICB9IiwiLlRpdGxlSGVhZGVyIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogNTBweDtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG5cbi5UaXRsZVRleHQge1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgZm9udC1zaXplOiAxOXB4O1xuICB3aWR0aDogODElO1xuICBjb2xvcjogI2ZmZmZmZjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbn1cblxuLlRpdGxlU2lkZXIge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHRleHQtYWxpZ246IHJpZ2h0O1xuICB3aWR0aDogMTAwJTtcbn1cblxuLkJhY2tCdXR0b24ge1xuICBiYWNrZ3JvdW5kOiB1cmwoXCIuLi8uLi9hc3NldHMvYmFja193aGl0ZS5wbmdcIikgY2VudGVyO1xuICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XG4gIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XG4gIHdpZHRoOiAzMHB4O1xuICBoZWlnaHQ6IDMwcHg7XG4gIG91dGxpbmU6IDA7XG4gIGJveC1zaGFkb3c6IDAgMCAwIDA7XG4gIG1hcmdpbi1yaWdodDogMTVweDtcbn1cblxuLnNlYXJjaC1maWx0ZXItY29udGFpbmVyIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogNDVweDtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIG1hcmdpbi10b3A6IDhweDtcbn1cblxuLlNlYXJjaE9wdGlvbiB7XG4gIHdpZHRoOiA5MCU7XG59XG5cbi5GaWx0ZXJPcHRpb24ge1xuICB3aWR0aDogMTAlO1xufVxuXG4uU2VhcmNoRGl2IHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbiAgbWFyZ2luOiAwIDQlIDAgNCU7XG59XG5cbmlucHV0LnZhbGlkIHtcbiAgLyogYm9yZGVyLWNvbG9yOiAjMjhhNzQ1OyAqL1xuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCIuLi8uLi9hc3NldHMvRmlsdGVyU2VhcmNoLnBuZ1wiKTtcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcbiAgYmFja2dyb3VuZC1zaXplOiAyMHB4IDIwcHg7XG4gIGJhY2tncm91bmQtcG9zaXRpb246IDk1JSBjZW50ZXI7XG4gIGhlaWdodDogMzdweDtcbiAgd2lkdGg6IDEwMCU7XG4gIHBhZGRpbmctbGVmdDogMjBweDtcbiAgLyogcGFkZGluZy1yaWdodDogMjBweDsgKi9cbiAgb3V0bGluZS13aWR0aDogMDtcbiAgYm9yZGVyLXdpZHRoOiAwO1xuICBmb250LXNpemU6IDEzcHg7XG4gIGZvbnQtd2VpZ2h0OiA0MDA7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gIGJvcmRlci1yYWRpdXM6IDE1cHg7XG4gIG91dGxpbmUtY29sb3I6IHdoaXRlO1xufVxuXG4uTWFpbkNvbnRhaW5lciB7XG4gIHdpZHRoOiAxMDAlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjRjFGNEY4O1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbi5MaXN0SXRlbSB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4uTGlzdENhcmQge1xuICB3aWR0aDogOTIlO1xuICBtYXJnaW46IDQlO1xufVxuXG4uU2luZ2xlTGlzdEl0ZW0ge1xuICB3aWR0aDogMTAwJTtcbn1cblxuLlNpdGVOYW1lIHtcbiAgZm9udC1zaXplOiAxcmVtO1xuICBmb250LXdlaWdodDogNjAwO1xuICBmb250LWZhbWlseTogXCJSb2JvdG9cIiwgc2Fucy1zZXJpZjtcbn1cblxuLlNpdGVEZXNjcmlwdGlvbiB7XG4gIGZvbnQtc2l6ZTogMC44cmVtO1xuICBmb250LXdlaWdodDogNTAwO1xuICBmb250LWZhbWlseTogXCJSb2JvdG9cIiwgc2Fucy1zZXJpZjtcbiAgY29sb3I6ICM1MzUyNTI7XG59XG5cbi5Mb2dvdXRCdG4ge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgY29sb3I6ICNmZmY7XG4gIGZvbnQtZmFtaWx5OiBcIlJvYm90b1wiLCBzYW5zLXNlcmlmO1xuICBmb250LXNpemU6IDE1cHg7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIGxldHRlci1zcGFjaW5nOiAwLjhweDtcbiAgbGluZS1oZWlnaHQ6IDE5cHg7XG59XG5cbi5GaXhlZEJ1dHRvbiB7XG4gIHdpZHRoOiA2NXB4O1xuICBoZWlnaHQ6IDY1cHg7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgYm90dG9tOiAyMHB4O1xuICByaWdodDogMjBweDtcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xuICBjb2xvcjogd2hpdGU7XG4gIHotaW5kZXg6IDEwO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzI1NWYzO1xufVxuXG4ubmV3LWJhY2tncm91bmQtY29sb3Ige1xuICAtLWJhY2tncm91bmQ6ICNkMjY5MWU7XG59XG5cbi5vZGQge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjA4MTMyO1xufVxuXG4uZXZlbiB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNlZTM4Yjc7XG59XG5cbi5lZGl0Q3NzIHtcbiAgd2lkdGg6IDUwJTtcbiAgbWFyZ2luLWxlZnQ6IDQ1JTtcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzI1NWYzO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgcGFkZGluZzogMTFweDtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBib3R0b206IDEwcHg7XG4gIHJpZ2h0OiAxMHB4O1xuICBib3JkZXItcmFkaXVzOiAyMHB4O1xufSJdfQ== */";
     /***/
   },
 
@@ -236,37 +236,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! ../../environments/environment */
-    "./src/environments/environment.ts");
-    /* harmony import */
-
-
-    var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/material */
     "./node_modules/@angular/material/esm2015/material.js");
     /* harmony import */
 
 
-    var _services_loader_loader_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _services_loader_loader_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../services/loader/loader.service */
     "./src/app/services/loader/loader.service.ts");
     /* harmony import */
 
 
-    var _services_networkproviderservices_networkproviderservice_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _services_networkproviderservices_networkproviderservice_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ../services/networkproviderservices/networkproviderservice.service */
     "./src/app/services/networkproviderservices/networkproviderservice.service.ts");
     /* harmony import */
 
 
-    var _ionic_storage__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var _ionic_storage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @ionic/storage */
     "./node_modules/@ionic/storage/fesm2015/ionic-storage.js");
     /* harmony import */
 
 
-    var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! @ionic/angular */
     "./node_modules/@ionic/angular/dist/fesm5.js");
 
@@ -283,14 +277,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.network = network;
         this.storage = storage;
         this.menu = menu;
-        this.toast = toast;
-        this.displayDetail = 0;
+        this.toast = toast; // displayDetail = 0;
+
         this.getCusstomers = [{
           "name": "llllllllll jjjjjjjjjjj",
           "mobile": "",
           "amount": "2500",
-          "address": "Mumbai",
+          "address": "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
           "email": "lllll@gmail.com",
+          "note": "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
           "imagepath": "https://image.shutterstock.com/image-vector/get-ready-advertising-sign-megaphone-600w-1037346505.jpg"
         }, {
           "name": "smitaaa belhekar",
@@ -303,8 +298,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           "name": "asmita belhekar",
           "mobile": "9527902622",
           "amount": "5000",
-          "address": "Pune",
+          "address": "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
           "email": "asmita@gmail.com",
+          "note": "aaaaaaaaaaaaaaaa",
           "imagepath": "https://image.flaticon.com/icons/svg/145/145852.svg"
         }, {
           "name": "sejal belhekar",
@@ -312,6 +308,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           "amount": "2500",
           "address": "Pune",
           "email": "",
+          "note": "aaaaaaaaaaaaaaaa",
           "imagepath": ""
         }, {
           "name": "priya abc",
@@ -319,6 +316,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           "amount": "2500",
           "address": "Mumbai",
           "email": "priya@gmail.com",
+          "note": "aaaaaaaaaaaaaaaa",
           "imagepath": "https://image.flaticon.com/icons/svg/145/145852.svg"
         }, {
           "name": "asmi belhekar",
@@ -326,6 +324,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           "amount": "1000",
           "address": "Ahmednagar",
           "email": "asmi@gmail.com",
+          "note": "aaaaaaaaaaaaaaaa",
           "imagepath": ""
         }, {
           "name": "kiran kokate",
@@ -333,12 +332,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           "amount": "5000",
           "address": "Pune",
           "email": "kiran@gmail.com",
+          "note": "",
           "imagepath": "https://image.flaticon.com/icons/svg/145/145859.svg"
         }, {
           "name": "ccccc dddd",
           "mobile": "1234567890",
           "amount": "2500",
           "address": "Pune",
+          "note": "aaaaaaaaaaaaaaaa",
           "email": "ccccc@gmail.com",
           "imagepath": ""
         }, {
@@ -346,6 +347,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           "mobile": "1234567890",
           "amount": "2500",
           "address": "Mumbai",
+          "note": "aaaaaaaaaaaaaaaa",
           "email": "dhananjay@gmail.com",
           "imagepath": "https://image.shutterstock.com/image-vector/get-ready-advertising-sign-megaphone-600w-1037346505.jpg"
         }, {
@@ -353,6 +355,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           "mobile": "1234567890",
           "amount": "1000",
           "address": "Ahmednagar",
+          "note": "aaaaaaaaaaaaaaaa",
           "email": "ccc@gmail.com",
           "imagepath": ""
         }, {
@@ -360,6 +363,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           "mobile": "1234567890",
           "amount": "5000",
           "address": "Pune",
+          "note": "aaaaaaaaaaaaaaaa",
           "email": "chchch@gmail.com",
           "imagepath": ""
         }, {
@@ -367,6 +371,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           "mobile": "1234567890",
           "amount": "2500",
           "address": "",
+          "note": "aaaaaaaaaaaaaaaa",
           "email": "azazazaz@gmail.com",
           "imagepath": "https://image.shutterstock.com/image-vector/get-ready-advertising-sign-megaphone-600w-1037346505.jpg"
         }, {
@@ -374,133 +379,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           "mobile": "1234567890",
           "amount": "1000",
           "address": "Ahmednagar",
+          "note": "aaaaaaaaaaaaaaaa",
           "email": "smitaaa@gmail.com",
-          "imagepath": ""
-        }, {
-          "name": "asmita belhekar",
-          "mobile": "9527902622",
-          "amount": "5000",
-          "address": "Pune",
-          "email": "asmita@gmail.com",
-          "imagepath": "https://image.flaticon.com/icons/svg/145/145852.svg"
-        }, {
-          "name": "sejal belhekar",
-          "mobile": "1234567890",
-          "amount": "2500",
-          "address": "Pune",
-          "email": "",
-          "imagepath": ""
-        }, {
-          "name": "priya abc",
-          "mobile": "1234567890",
-          "amount": "2500",
-          "address": "Mumbai",
-          "email": "priya@gmail.com",
-          "imagepath": "https://image.flaticon.com/icons/svg/145/145852.svg"
-        }, {
-          "name": "asmi belhekar",
-          "mobile": "9527902622",
-          "amount": "1000",
-          "address": "Ahmednagar",
-          "email": "asmi@gmail.com",
-          "imagepath": ""
-        }, {
-          "name": "kiran kokate",
-          "mobile": "9096467346",
-          "amount": "5000",
-          "address": "Pune",
-          "email": "kiran@gmail.com",
-          "imagepath": "https://image.flaticon.com/icons/svg/145/145859.svg"
-        }, {
-          "name": "ccccc dddd",
-          "mobile": "1234567890",
-          "amount": "2500",
-          "address": "Pune",
-          "email": "ccccc@gmail.com",
-          "imagepath": ""
-        }, {
-          "name": "dhananjay raut",
-          "mobile": "1234567890",
-          "amount": "2500",
-          "address": "Mumbai",
-          "email": "dhananjay@gmail.com",
-          "imagepath": "https://image.shutterstock.com/image-vector/get-ready-advertising-sign-megaphone-600w-1037346505.jpg"
-        }, {
-          "name": "cccc  ppppp",
-          "mobile": "1234567890",
-          "amount": "1000",
-          "address": "Ahmednagar",
-          "email": "ccc@gmail.com",
-          "imagepath": ""
-        }, {
-          "name": "cccc  hhhhhhh ",
-          "mobile": "1234567890",
-          "amount": "5000",
-          "address": "Pune",
-          "email": "chchch@gmail.com",
           "imagepath": ""
         }, {
           "name": "aaaaaaaa   zzzz",
           "mobile": "1234567890",
           "amount": "2500",
           "address": "Pune",
+          "note": "",
           "email": "azazazaz@gmail.com",
           "imagepath": "https://image.shutterstock.com/image-vector/get-ready-advertising-sign-megaphone-600w-1037346505.jpg"
         }];
         this.all_sites = [];
-        this.aContact = [];
-        this.bContact = [];
-        this.cContact = [];
-        this.dContact = [];
-        this.eContact = [];
-        this.fContact = [];
-        this.gContact = [];
-        this.hContact = [];
-        this.iContact = [];
-        this.jContact = [];
-        this.kContact = [];
-        this.lContact = [];
-        this.mContact = [];
-        this.nContact = [];
-        this.oContact = [];
-        this.pContact = [];
-        this.qContact = [];
-        this.rContact = [];
-        this.sContact = [];
-        this.tContact = [];
-        this.uContact = [];
-        this.vContact = [];
-        this.wContact = [];
-        this.xContact = [];
-        this.yContact = [];
-        this.zContact = [];
-        this.finalList = [];
-        this.otherContact = [];
         this.isItemAvailable = false;
         this.items = [];
         this.currentColor = 'blue';
-      }
+      } // initializeItems() {
+      //   this.items = ["Ram", "gopi", "dravid"];
+      // }
+      // getItems(ev: any) {
+      //   this.initializeItems();
+      //   const val = ev.target.value;
+      //   console.log("search text:" + ev.target.value);
+      //   if (val && val.trim() != '') {
+      //     this.isItemAvailable = true;
+      //     this.items = this.items.filter((item) => {
+      //       return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      //     })
+      //   }
+      // }
+
 
       _createClass(SitesPage, [{
-        key: "initializeItems",
-        value: function initializeItems() {
-          this.items = ["Ram", "gopi", "dravid"];
-        }
-      }, {
-        key: "getItems",
-        value: function getItems(ev) {
-          this.initializeItems();
-          var val = ev.target.value;
-          console.log("search text:" + ev.target.value);
-
-          if (val && val.trim() != '') {
-            this.isItemAvailable = true;
-            this.items = this.items.filter(function (item) {
-              return item.toLowerCase().indexOf(val.toLowerCase()) > -1;
-            });
-          }
-        }
-      }, {
         key: "openFirst",
         value: function openFirst() {
           this.menu.enable(true, 'first');
@@ -522,19 +433,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function ngOnInit() {
           var _this = this;
 
-          for (var i = 0; i < this.getCusstomers.length; i++) {
-            console.log("display this.getCusstomers['name'] ::" + this.getCusstomers[i]['name']);
-            this.finalList.push(this.getCusstomers[i]['name']);
-          }
-
-          console.log("display array inserted:" + this.finalList);
-          console.log("display array sorted:" + this.finalList.sort());
-          this.finalList = this.getCusstomers['name'];
           this.getCusstomers.sort(function (a, b) {
             return a.name.localeCompare(b.name);
           });
-          this.getSites();
-          this.getContactList();
           this.storage.get("cepl_user_data").then(function (val) {
             var tmp = JSON.parse(val);
             _this.user_data = tmp;
@@ -547,169 +448,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           console.log("network status3", net);
         }
       }, {
-        key: "getContactList",
-        value: function getContactList() {
-          for (var i = 0; i < this.getCusstomers.length; i++) {
-            this.finalList = this.getCusstomers[i]['name'];
-            var x = this.getCusstomers[i].name;
-
-            if (x.charAt(0) == "A" || x.charAt(0) == 'a') {
-              this.aContact.push(this.getCusstomers[i].name);
-              console.log("get aContact details:" + this.aContact);
-            } else if (x.charAt(0) == "B" || x.charAt(0) == 'b') {
-              this.bContact.push(this.getCusstomers[i].name);
-              console.log("get bContact details:" + this.bContact);
-            } else if (x.charAt(0) == "C" || x.charAt(0) == 'c') {
-              this.cContact.push(this.getCusstomers[i].name);
-              console.log("get cContact details:" + this.cContact);
-            } else if (x.charAt(0) == "D" || x.charAt(0) == 'd') {
-              this.dContact.push(this.getCusstomers[i].name);
-              console.log("get dContact details:" + this.dContact);
-            } else if (x.charAt(0) == "E" || x.charAt(0) == 'e') {
-              this.eContact.push(this.getCusstomers[i].name);
-              console.log("get eContact details:" + this.eContact);
-            } else if (x.charAt(0) == "F" || x.charAt(0) == 'f') {
-              this.fContact.push(this.getCusstomers[i].name);
-              console.log("get fContact details:" + this.fContact);
-            } else if (x.charAt(0) == "G" || x.charAt(0) == 'g') {
-              this.gContact.push(this.getCusstomers[i].name);
-              console.log("get gContact details:" + this.gContact);
-            } else if (x.charAt(0) == "H" || x.charAt(0) == 'h') {
-              this.hContact.push(this.getCusstomers[i].name);
-              console.log("get hContact details:" + this.hContact);
-            } else if (x.charAt(0) == "I" || x.charAt(0) == 'i') {
-              this.iContact.push(this.getCusstomers[i].name);
-              console.log("get iContact details:" + this.iContact);
-            } else if (x.charAt(0) == "J" || x.charAt(0) == 'j') {
-              this.jContact.push(this.getCusstomers[i].name);
-              console.log("get Contact details:" + this.jContact);
-            } else if (x.charAt(0) == "K" || x.charAt(0) == 'k') {
-              this.kContact.push(this.getCusstomers[i].name);
-              console.log("get Contact details:" + this.kContact);
-            } else if (x.charAt(0) == "L" || x.charAt(0) == 'l') {
-              this.lContact.push(this.getCusstomers[i].name);
-              console.log("get Contact details:" + this.lContact);
-            } else if (x.charAt(0) == "M" || x.charAt(0) == 'm') {
-              this.mContact.push(this.getCusstomers[i].name);
-              console.log("get Contact details:" + this.mContact);
-            } else if (x.charAt(0) == "N" || x.charAt(0) == 'n') {
-              this.nContact.push(this.getCusstomers[i].name);
-              console.log("get Contact details:" + this.nContact);
-            } else if (x.charAt(0) == "O" || x.charAt(0) == 'o') {
-              this.oContact.push(this.getCusstomers[i].name);
-              console.log("get Contact details:" + this.oContact);
-            } else if (x.charAt(0) == "P" || x.charAt(0) == 'p') {
-              this.pContact.push(this.getCusstomers[i].name);
-              console.log("get Contact details:" + this.pContact);
-            } else if (x.charAt(0) == "Q" || x.charAt(0) == 'q') {
-              this.qContact.push(this.getCusstomers[i].name);
-              console.log("get Contact details:" + this.qContact);
-            } else if (x.charAt(0) == "R" || x.charAt(0) == 'r') {
-              this.rContact.push(this.getCusstomers[i].name);
-              console.log("get Contact details:" + this.rContact);
-            } else if (x.charAt(0) == "S" || x.charAt(0) == 's') {
-              this.sContact.push(this.getCusstomers[i].name);
-              console.log("get Contact details:" + this.sContact);
-            } else if (x.charAt(0) == "T" || x.charAt(0) == 't') {
-              this.tContact.push(this.getCusstomers[i].name);
-              console.log("get Contact details:" + this.tContact);
-            } else if (x.charAt(0) == "U" || x.charAt(0) == 'u') {
-              this.uContact.push(this.getCusstomers[i].name);
-              console.log("get Contact details:" + this.uContact);
-            } else if (x.charAt(0) == "V" || x.charAt(0) == 'v') {
-              this.vContact.push(this.getCusstomers[i].name);
-              console.log("get Contact details:" + this.vContact);
-            } else if (x.charAt(0) == "W" || x.charAt(0) == 'w') {
-              this.wContact.push(this.getCusstomers[i].name);
-              console.log("get Contact details:" + this.wContact);
-            } else if (x.charAt(0) == "X" || x.charAt(0) == 'x') {
-              this.xContact.push(this.getCusstomers[i].name);
-            } else if (x.charAt(0) == "Y" || x.charAt(0) == 'y') {
-              this.yContact.push(this.getCusstomers[i].name);
-              console.log("get Contact details:" + this.yContact);
-            } else if (x.charAt(0) == "Z" || x.charAt(0) == 'z') {
-              this.zContact.push(this.getCusstomers[i].name);
-              console.log("get Contact details:" + this.zContact);
-            }
-          }
-
-          console.log("sorted list:" + this.finalList);
-        }
-      }, {
-        key: "doSomething",
-        value: function doSomething() {
-          console.log("check onchange::");
-        }
-      }, {
-        key: "getSites",
-        value: function getSites() {
-          var _this2 = this;
-
-          this.loader.showBlockingLoaderAuth();
-          var url = _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].base_url + _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].version + "sites?page=0&size=200";
-          this.apiCall.get(url).subscribe(function (MyResponse) {
-            console.log("My Response", MyResponse);
-            _this2.all_sites = MyResponse['result']['list'];
-
-            _this2.loader.hideBlockingLoaderAuth();
-          }, function (error) {
-            _this2.network.CheckNetworkStatus();
-
-            _this2.network.onPageLoadCheckInternet();
-
-            _this2.loader.hideBlockingLoaderAuth();
-          });
-        }
-      }, {
-        key: "showTask",
-        value: function showTask(site) {
-          console.log("user id", this.user_data);
-          var update_access = 0;
-
-          if (site.users.length != 0) {
-            for (var i = 0; i < site.users.length; i++) {
-              if (site.users[i] == this.user_data['id']) {
-                update_access = 1;
-                break;
-              }
-            }
-          }
-
-          console.log("siteId", site.id);
-          this.router.navigate(['sites/' + site.id + "/" + site.name + "/" + update_access + '/location-of-area']);
-        } // logout() {
-        //   let send_data = {};
-        //   send_data['text'] = "Do you really want to logout ?";
-        //   send_data['button2'] = "Cancel";
-        //   send_data['button1'] = "Logout";
-        //   const dialogRef = this.dialog.open(ConfirmationPopupPage, {
-        //     width: '450px',
-        //     data: send_data
-        //   });
-        //   dialogRef.afterClosed().subscribe(result => {
-        //     console.log("result", result);
-        //     if (result['is_success'] == 1) {
-        //       this.storage.remove('cepl_user_data').then(() => {
-        //         this.router.navigate(['login']);
-        //       })
-        //     }
-        //   });
-        // }
-
-      }, {
-        key: "updateRecord",
-        value: function updateRecord() {
-          this.checkRecordStatus = "update";
-          this.router.navigate(['/addcustomer', {
-            checkstatus: this.checkRecordStatus
-          }]);
-        }
-      }, {
-        key: "deleteRecord",
-        value: function deleteRecord() {
-          this.presentToast("Record deleted successfully");
-        }
-      }, {
         key: "addCustomaer",
         value: function addCustomaer() {
           this.checkRecordStatus = "add";
@@ -718,12 +456,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "mobile": "",
             "address": "",
             "email": "",
-            "checkstatus": this.checkRecordStatus
+            "checkstatus": this.checkRecordStatus,
+            "note": ""
           };
           this.router.navigate(['/addcustomer', {
             detailCustomerdata: JSON.stringify(detailCustomerdata)
-          }]); // this.checkRecordStatus = "add";
-          // this.router.navigate(['/addcustomer', { checkstatus: this.checkRecordStatus }]);
+          }]);
         }
       }, {
         key: "presentToast",
@@ -755,19 +493,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }));
         }
       }, {
-        key: "getBalanceDetail",
-        value: function getBalanceDetail() {
-          this.router.navigate(['/paymentrecord']); // this.presentToast("Check pending balance");
-        } // detailInfo(k) {
-        //   this.displayDetail = 1;
-        //   this.displayImage = "../../assets/up-arrow.png";
-        // }
-        // lessInfo(j) {
-        //   this.displayDetail = 0;
-        //   this.displayImage = "../../assets/download.png";
-        // }
-
-      }, {
         key: "getCustomerDetailInfo",
         value: function getCustomerDetailInfo(data) {
           console.log("getdata::" + JSON.stringify(data));
@@ -778,7 +503,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "lname": data.lname,
             "amount": data.amount,
             "imagepath": data.imagepath,
-            "email": data.email
+            "email": data.email,
+            "note": data.note
           };
           this.router.navigate(['customerdetail', {
             detailData: JSON.stringify(detailData)
@@ -795,17 +521,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
       }, {
-        type: _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"]
+        type: _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialog"]
       }, {
-        type: _services_loader_loader_service__WEBPACK_IMPORTED_MODULE_6__["LoaderService"]
+        type: _services_loader_loader_service__WEBPACK_IMPORTED_MODULE_5__["LoaderService"]
       }, {
-        type: _services_networkproviderservices_networkproviderservice_service__WEBPACK_IMPORTED_MODULE_7__["NetworkproviderserviceService"]
+        type: _services_networkproviderservices_networkproviderservice_service__WEBPACK_IMPORTED_MODULE_6__["NetworkproviderserviceService"]
       }, {
-        type: _ionic_storage__WEBPACK_IMPORTED_MODULE_8__["Storage"]
+        type: _ionic_storage__WEBPACK_IMPORTED_MODULE_7__["Storage"]
       }, {
-        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["MenuController"]
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["MenuController"]
       }, {
-        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["ToastController"]
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["ToastController"]
       }];
     };
 
@@ -817,7 +543,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./sites.page.scss */
       "./src/app/sites/sites.page.scss")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_api_call_service__WEBPACK_IMPORTED_MODULE_2__["ApiCallService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"], _services_loader_loader_service__WEBPACK_IMPORTED_MODULE_6__["LoaderService"], _services_networkproviderservices_networkproviderservice_service__WEBPACK_IMPORTED_MODULE_7__["NetworkproviderserviceService"], _ionic_storage__WEBPACK_IMPORTED_MODULE_8__["Storage"], _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["MenuController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["ToastController"]])], SitesPage);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_api_call_service__WEBPACK_IMPORTED_MODULE_2__["ApiCallService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialog"], _services_loader_loader_service__WEBPACK_IMPORTED_MODULE_5__["LoaderService"], _services_networkproviderservices_networkproviderservice_service__WEBPACK_IMPORTED_MODULE_6__["NetworkproviderserviceService"], _ionic_storage__WEBPACK_IMPORTED_MODULE_7__["Storage"], _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["MenuController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["ToastController"]])], SitesPage);
     /***/
   }
 }]);

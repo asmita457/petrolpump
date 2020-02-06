@@ -4,14 +4,8 @@ import { ToastController } from '@ionic/angular';
 import { UpdatebalancePage } from '../updatebalance/updatebalance.page';
 import { MatDialog } from '@angular/material';
 import { User } from '../user';
-// import {
-//   Contacts,
-//   ContactFieldType,
-//   IContactFindOptions,
-//   Contact,
-//   ContactField,
-//   ContactName
-// } from "@ionic-native/contacts";
+import { ConfirmationPopupPage } from '../confirmation-popup/confirmation-popup.page';
+
 
 @Component({
   selector: 'app-addcustomer',
@@ -28,7 +22,6 @@ export class AddcustomerPage implements OnInit {
   checkStatus : any;
 
 
-  // userModel = new User('', '', 123, 234, '');
 
   constructor(public route: ActivatedRoute,
     public router: Router,
@@ -40,15 +33,14 @@ export class AddcustomerPage implements OnInit {
     console.log("detailCustomerdata" + this.recordstatus);
     let displayArrayValues = JSON.parse(this.recordstatus);
     this.userModel['mobile'] = displayArrayValues.mobile;
-    // this.userModel['fname'] = displayArrayValues.fname;
     this.userModel['address'] = displayArrayValues.address;
     this.userModel['email'] = displayArrayValues.email;
+    this.userModel['note'] = displayArrayValues.note;
 
     let fullname = displayArrayValues.fname;
     if(fullname != ""){
       let names = fullname.split(" ");
       this.userModel['fname'] = names[0];
-      // this.userModel['lname']= names[1];
       this.userModel['lname'] = names[(names.length -1)];  
     }
     
@@ -63,15 +55,6 @@ export class AddcustomerPage implements OnInit {
     }
   }
 
-
-  //   getContactList(){
-
-  //     this.contacts.find(['displayName', 'name', 'phoneNumbers'], {filter: "", multiple: true})
-  // .then(data => {
-  // this.allContacts = data
-
-  // });
-  //   }
   addCustomerData() {
     if (this.checkStatus == "add") {
       this.presentToast("Record added successfully");
@@ -102,6 +85,25 @@ export class AddcustomerPage implements OnInit {
 
 
   goBackword() {
-    this.router.navigate(['sites']);
+
+
+    let send_data = {};
+    send_data['text'] = "Are you sure you want to discard the changes?";
+    send_data['button2'] = "No";
+    send_data['button1'] = "Yes";
+
+    const dialogRef = this.dialog.open(ConfirmationPopupPage, {
+      width: '450px',
+      data: send_data
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      console.log("result", result);
+      // this.router.navigate(['sites']);
+    });
+
+
+   
   }
 }

@@ -9,17 +9,17 @@
 .TitleText{
     display: inline-flex;
     text-align:left;
-    font-size: 1.3rem;
+    font-size: 19px;
     width: 81%;
     color: #ffffff;
-    font-weight: 700;
+    // font-weight: 700;
     align-items: center;
 }
 .TitleSider{
     display: inline-block;
     text-align:right;
-    font-size: 1rem;
-    font-weight: 600;
+    // font-size: 1rem;
+    // font-weight: 600;
     width: 100%;
 
 }
@@ -135,3 +135,26 @@ input.valid {
 .new-background-color{
     --background: #d2691e;
 }
+
+.odd{
+    background-color:#f08132;
+  }
+  .even{
+    background-color: rgb(238, 56, 183);
+  }
+
+
+
+.editCss{   
+    width: 50%;
+    margin-left:45%;
+    margin-right:10px;
+    background-color: #3255f3;
+    display: inline-block;
+    text-align: center;
+  padding:11px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+    border-radius: 20px;
+  }

@@ -17,6 +17,8 @@ export class CustomerdetailPage implements OnInit {
   customerAddress: any;
   customerEmail: any;
   checkRecordStatus: any;
+  customerNote : any;
+
   constructor(public activatedRoute: ActivatedRoute,
     public router: Router,
     private callNumber: CallNumber,
@@ -52,6 +54,13 @@ export class CustomerdetailPage implements OnInit {
     else{
       this.customerEmail = "NA";
     }
+
+    if(parseArray.note != ""){
+      this.customerNote = parseArray.note;
+    }
+    else{
+      this.customerNote = "NA";
+    }
    
     this.customerImage = parseArray.imagepath;
     
@@ -72,7 +81,8 @@ export class CustomerdetailPage implements OnInit {
       "mobile" : this.customerMobile,
       "address" : this.customerAddress,
       "email" : this.customerEmail,
-      "checkstatus" : this.checkRecordStatus
+      "checkstatus" : this.checkRecordStatus,
+      "note" : this.customerNote
     }
     this.router.navigate(['/addcustomer', { detailCustomerdata: JSON.stringify(detailCustomerdata) }]);
   }

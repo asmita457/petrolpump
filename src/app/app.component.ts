@@ -65,8 +65,13 @@ export class AppComponent {
     this.navigate =
     [
       {
-        title : "Home",
+        title : "Customer",
         url   : "/sites",
+        icon  : "home"
+      },
+      {
+        title : "Record",
+        url   : "/updateamountrecord",
         icon  : "home"
       },
       {

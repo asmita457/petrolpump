@@ -104,8 +104,7 @@ export class LoginPage implements OnInit {
       
         this.storage.set("cepl_user_data",JSON.stringify(MyResponse['result'])).then(()=>{
           this.preloader.hideBlockingLoaderAuth();
-          this.router.navigate(['sites']);
-
+          this.router.navigate(['updateamountrecord']);
         });
   
   

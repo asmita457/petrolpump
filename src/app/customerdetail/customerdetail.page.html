@@ -18,9 +18,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-
-  <img *ngIf="customerImage == '' " src="../../assets/acnt.png" class="centerFixedImg" />
-  <img *ngIf="customerImage != '' " src="{{customerImage}}" class="centerImg" />
+  <button class="centerImg" style="font-size :16px">{{customerName.charAt(0) | uppercase}}</button>
 
   <ion-item style="margin-left:-15px">
     <div class="inputCss" style="margin-top:3%; font-size: 20px; margin-bottom: 15px">
@@ -55,12 +53,12 @@
       <ion-item>
         <ion-row style="width:100%">
 
-          <ion-label>+91</ion-label>
+          <ion-label *ngIf="customerMobile != 'NA' ">+91</ion-label>
           <ion-label style="width:5px"></ion-label>
           <ion-label>{{customerMobile}}</ion-label>
 
         </ion-row>
-      
+
       </ion-item>
     </ion-col>
   </ion-row>
@@ -85,19 +83,32 @@
     </ion-col>
     <ion-col size="10">
       <ion-item>
-        <ion-label>{{customerAddress}}</ion-label>
+        <ion-label class="ion-text-wrap">{{customerAddress}}</ion-label>
 
       </ion-item>
     </ion-col>
   </ion-row>
 
- 
+
+  <ion-row style="margin-left:15px; margin-bottom: 35px">
+    <ion-col size="2">
+      <ion-icon name="document" style="width:25px; height:28px; color : #5b5b5e; margin-top: 12px">
+      </ion-icon>
+    </ion-col>
+    <ion-col size="10">
+      <ion-item>
+        <ion-label class="ion-text-wrap">{{customerNote}}</ion-label>
+
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
 
   <div class="editCss" style="margin-top:20%" (click)="editDetails()">
     <ion-icon name="create" style="width:20px; height:18px; color : #ffffff;">
     </ion-icon>
 
-      <ion-label style="color:white;" align="center"><b>Edit Contact</b></ion-label>
-    
-    </div>
+    <ion-label style="color:white;" align="center">Edit Customer</ion-label>
+
+  </div>
 </ion-content>

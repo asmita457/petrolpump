@@ -1574,13 +1574,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.confirmationText = this.data['text'];
           this.button1 = this.data['button1'];
           this.button2 = this.data['button2'];
+          console.log("button1 text:" + this.button1);
+          console.log("button2 text:" + this.button2);
         }
       }, {
         key: "confirm",
         value: function confirm(flag) {
           var send_data = {};
           send_data['is_success'] = flag;
-          this.dialogRef.close(send_data);
+
+          if (flag == 1) {
+            if (this.button1 == "Yes") {
+              this.dialogRef.close(send_data);
+              console.log("button text:" + this.button2);
+              this.router.navigate(['sites']);
+            } else {
+              this.dialogRef.close(send_data);
+            }
+          } else {
+            this.dialogRef.close(send_data);
+          }
         }
       }]);
 

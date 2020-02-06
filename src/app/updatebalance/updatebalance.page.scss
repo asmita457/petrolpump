@@ -16,6 +16,17 @@
     align-items: center;
 }
 
+.TitleButton{
+    display: inline-flex;
+    text-align:center;
+    font-size: 1.3rem;
+    width: 81%;
+    color: #ffffff;
+    align:"center";
+    font-weight: 700;
+    align-items: center;
+}
+
 .inputCss{
     border: 1px solid #000000;
      color: black; 
@@ -24,4 +35,37 @@
     margin-right: 10%;
     border-radius: 15px;
     margin-top:20px;
+}
+
+.buttonCss{
+     color: white; 
+     width: 80%; 
+     font-size: 17px;
+     padding: 12px;
+     background: #3255f3;
+     margin-left: 10%; 
+    margin-right: 10%;
+    border-radius: 15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+
+.new-background-color{
+    --background: #3255f3;
+}
+
+.updateButton{
+    box-sizing: border-box;	
+    height: 48px;	
+    border-radius: 25px;	
+    background-color: #3255f3;
+    color: #FFFFFF;	
+    font-family: 'Roboto',sans-serif;	
+    font-size: 15px;	
+    font-weight: 500;	
+    letter-spacing: 0.8px;	
+    line-height: 19px;
+    // margin-bottom: 25px;
+    box-shadow: 0 4px 8px 2px #FFF3E0, 0 2px 2px 0 #FFF3E0;
 }

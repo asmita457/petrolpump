@@ -15,6 +15,7 @@ import { platformBrowser } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgMatSearchBarModule } from 'ng-mat-search-bar';
 import {
   MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatPaginatorModule,
   MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
@@ -35,6 +36,8 @@ import { WorkDetailsPage } from './work-details/work-details.page'
 
 import { NetworkproviderserviceService } from './services/networkproviderservices/networkproviderservice.service'
 import { UpdatebalancePage } from './updatebalance/updatebalance.page';
+import { NewcustomerPage } from './newcustomer/newcustomer.page';
+import { NewcustomerPageModule } from './newcustomer/newcustomer.module';
 
 
 
@@ -44,7 +47,8 @@ import { UpdatebalancePage } from './updatebalance/updatebalance.page';
     AppComponent,
     ConfirmationPopupPage,
     WorkDetailsPage,
-    UpdatebalancePage
+    UpdatebalancePage,
+  
   ],
   entryComponents: [ConfirmationPopupPage,WorkDetailsPage, UpdatebalancePage],
   imports: [
@@ -89,9 +93,13 @@ import { UpdatebalancePage } from './updatebalance/updatebalance.page';
     MatNativeDateModule,
     MatMenuModule,
     Ng2SearchPipeModule,
-
-
+    NgMatSearchBarModule,
   ],
+   exports: [
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+      ],
   providers: [
     StatusBar,
     SplashScreen,
@@ -100,6 +108,7 @@ import { UpdatebalancePage } from './updatebalance/updatebalance.page';
     Network,
     NetworkproviderserviceService,
     Ng2SearchPipeModule,
+    NewcustomerPageModule,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

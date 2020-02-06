@@ -1,7 +1,11 @@
-<div *ngIf="is_show == 1" class="MainLoginClass">
+<mat-card style="margin-left:10%; margin-right: 10%; width: 80%; margin-top:45%">
 
-  <h3 class="TitleClass">Khamkar Petrolium</h3>
+<div *ngIf="is_show == 1" class="MainLoginClass" style="background: white; margin-top: 15px">
+  <img src="../../assets/logoapp.png" style="height: 100px; width: 100px; border-radius: 50%; margin-top: -15px"/>
 
+
+  
+  <!-- <h3 class="TitleClass">Khamkar Petrolium</h3> -->
   <div class="LoginFormClass">
 
       <form name="entryform" class="FullWidth" #f="ngForm" novalidate>
@@ -55,14 +59,11 @@
               <div class="LoginClass">
                   <button mat-raised-button [disabled]="mobile.invalid || password.invalid" class="LogoutBtn" (click)="Login(login)">Proceed</button>
 
-                  <!-- <p class="ForgotPassword">Forgot Password</p> -->
-                  <!-- <p class="Sales">{{currentYear}} CEPL</p> -->
-
               </div>
 
 
         </form>
 
   </div>
-
 </div>
+</mat-card>

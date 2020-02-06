@@ -1,15 +1,17 @@
 <ion-app>
     <ion-menu side="start" menuId="first" contentId="content1">
-        <ion-header color="primary">
-          <ion-toolbar color="primary">
-            <ion-title>CEPL</ion-title>
+      <!-- <ion-header style="height:280px; margin-top: -70px" class="backgroundImage"> -->
+        <ion-header style="height:150px">
+          <ion-toolbar >
+            <img src="../assets/logoapp.png" style="margin-left:15px" class="centerImg"/>
+            <ion-title style="color: #000000; margin-top: 10px;">Khamkar Petrolium</ion-title>
           </ion-toolbar>
         </ion-header>
         <ion-content>
           <ion-list *ngFor="let pages of navigate">
           <ion-menu-toggle auto-hide="true">
-            <ion-item [routerLink]="pages.url" routerDirection="forward">
-                <ion-icon [name]="pages.icon" slot="start"></ion-icon>
+            <ion-item [routerLink]="pages.url" routerDirection="forward" (click)="sideMenuClicked(pages.title)">
+                <ion-icon [name]="pages.icon" slot="start" ></ion-icon>
                    {{pages.title}} 
             </ion-item>
           </ion-menu-toggle>
@@ -31,4 +33,5 @@
         </div>
       </div>
   <ion-router-outlet id="content1"></ion-router-outlet>
+  
 </ion-app>

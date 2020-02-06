@@ -207,3 +207,22 @@
   .toast-container{
     background:yellow;
 }
+
+
+.new-background-color{
+  --background: #d2691e;
+}
+
+.centerImg {
+  display: block;
+  // margin-left: auto;
+  // margin-right: auto;
+  width: 70px;
+  margin-top: 20px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.backgroundImage{
+  background: url('../assets/khamkrpetrolpump.png') center;
+}

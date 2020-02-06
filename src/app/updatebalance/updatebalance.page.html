@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar class="new-background-color">
    <ion-row>
      <ion-col size="10" class="TitleHeader TitleText">
       <ion-label align="center" style="margin-left:25px">
@@ -13,15 +13,12 @@
    </ion-row>
   </ion-toolbar>
   <div>
-    <!-- <ion-input class="inputCss" placeholder="Name"></ion-input> -->
     <ion-input  class="inputCss" placeholder="Mobile"></ion-input>
-    <ion-input  class="inputCss" placeholder="Amount"></ion-input>
-    <!-- <ion-input  class="inputCss" placeholder="Address"></ion-input> -->
-  
-  
-    <ion-button (click)="updateBalanceamount()" align="center" style="margin-top:30px; margin-left:35%; margin-bottom:20px">Update</ion-button>
-  
+    <ion-input  class="inputCss" placeholder="Amount"></ion-input>  
   </div>
+  <!-- <div class="TitleHeader TitleButton"> -->
+    <button  (click)="updateBalanceamount()" align="center" class="buttonCss">Update</button>
+  <!-- </div> -->
 </ion-header>
 
 <!-- <ion-content>

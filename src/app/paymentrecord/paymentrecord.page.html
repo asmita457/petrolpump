@@ -1,8 +1,8 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar class="new-background-color">
     <ion-row>
       <ion-col size="2">
-        <button ion-button class="BackButton" (click)="goBackword()"></button>
+        <button ion-button class="BackButton" (click)="goBackword()" style="margin:5px"></button>
       </ion-col>
       <ion-col size="10"  class="TitleHeader TitleText">
         <ion-label>Payment Details</ion-label>
@@ -10,23 +10,26 @@
     </ion-row>
    
 
-    <!-- <ion-title class="Padding0" style="padding: 0;">
-      <div class="TitleHeader">
-        <div class="TitleText">
-
-          &nbsp;&nbsp;&nbsp;
-          <div style="width: 80%; overflow: hidden; text-overflow: ellipsis;">
-            Payment Details
-          </div>
-        </div>
-       
-      </div>
-    </ion-title> -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content >
+  <table class="tableback" align="center">
+    <tr class="tablebackground">
+      <th class="tablebackground">Date</th>
+      <th class="tablebackground">Credited</th>
+      <th class="tablebackground">Debited</th>
+      
+    </tr>
+    <tr *ngFor="let lg of getBalanceDetail">
+      <td class="tablebackground" align="center">{{lg.date}}</td>
+      <td tooltip="lg.credited" class="tablebackground" align="center">{{lg.credited}}</td>
+      <td class="tablebackground" align="center">
+          <span  style="color: black;" >{{lg.debited}}</span> 
+      </td>
+     
+    </tr>
+    </table>
   <button mat-raised-button class="FixedButton" (click)="updateBalance()"> <img src="../../assets/AddRestro.png"
     width="30" height="30"> </button>
 </ion-content>

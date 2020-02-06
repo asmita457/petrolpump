@@ -31,6 +31,15 @@
     },
     "cordova-plugin-network-information": {
       "PACKAGE_NAME": "com.product.cepl"
+    },
+    "cordova-plugin-contacts": {
+      "PACKAGE_NAME": "com.product.petrol_pump"
+    },
+    "mx.ferreyra.callnumber": {
+      "PACKAGE_NAME": "com.product.petrol_pump"
+    },
+    "cordova-sms-plugin": {
+      "PACKAGE_NAME": "com.product.petrol_pump"
     }
   },
   "dependent_plugins": {}

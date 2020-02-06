@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { AddcustomerPageRoutingModule } from './addcustomer-routing.module';
 
 import { AddcustomerPage } from './addcustomer.page';
+import { MaterialModule } from '../material.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    MaterialModule,
     AddcustomerPageRoutingModule
   ],
   declarations: [AddcustomerPage]

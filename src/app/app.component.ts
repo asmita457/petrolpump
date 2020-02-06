@@ -4,6 +4,9 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { LoaderService } from './services/loader/loader.service';
 import { Router } from '@angular/router';
+import { ConfirmationPopupPage } from './confirmation-popup/confirmation-popup.page';
+import { MatDialog } from '@angular/material';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-root',
@@ -32,6 +35,8 @@ export class AppComponent {
     private menu: MenuController,
     private actionSheetCtrl: ActionSheetController,
     private popoverCtrl: PopoverController,
+    private dialog : MatDialog,
+    private storage : Storage
 
   ) {
     this.sideMenu();
@@ -74,6 +79,11 @@ export class AppComponent {
         url   : "/terms-conditions",
         icon  : "contacts"
       },
+      {
+        title : "Log Out",
+        url   : "",
+        icon  : "log-out"
+      }
     ]
   }
 
@@ -81,5 +91,37 @@ export class AppComponent {
     this.preloader.blockingLoaderAuth.subscribe(event => {
       this.loadingBlock = event;
     });
+  }
+
+  logout() {
+
+    let send_data = {};
+    send_data['text'] = "Do you really want to logout ?";
+    send_data['button2'] = "Cancel";
+    send_data['button1'] = "Logout";
+
+    const dialogRef = this.dialog.open(ConfirmationPopupPage, {
+      width: '450px',
+      data: send_data
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      console.log("result", result);
+      if (result['is_success'] == 1) {
+        this.storage.remove('cepl_user_data').then(() => {
+
+          this.router.navigate(['login']);
+        })
+      }
+    });
+
+  }
+
+  sideMenuClicked(page) {
+    if (page === 'Log Out') {
+      this.logout();
+      localStorage.clear();
+    } 
   }
 }

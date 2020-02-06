@@ -4,13 +4,15 @@
 }
 
 .inputCss{
-    border: 1px solid #000000;
      color: black; 
-     width: 80%; 
-     margin-left: 10%; 
-    margin-right: 10%;
-    border-radius: 15px;
-    margin-top:20px;
+     width: 70%; 
+     margin-left: 15%; 
+    margin-right: 15%;
+    margin-top:7px;
+}
+
+.labelCss{
+    margin-top:15% !important;
 }
 
 .TitleHeader{
@@ -42,3 +44,60 @@
     box-shadow: 0 0 0 0;
     margin-right: 15px;
 }
+
+.new-background-color{
+    --background: #d2691e;
+}
+
+.buttonCss{
+    color: white; 
+    width: 70%; 
+     margin-left: 15%; 
+    margin-right: 15%;
+    font-size: 17px;
+    padding: 12px;
+    background: #3255f3;
+   
+   border-radius: 15px;
+   margin-top:20px;
+   margin-bottom:20px;
+}
+
+
+
+.centerImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70px;
+    margin-top: 20px;
+    height: 70px;
+    margin-top:10%;
+    border-radius: 50%;
+  }
+
+  .submitButton{
+   
+    height: 48px;	
+    width: 70%; 
+     margin-left: 15%; 
+    margin-right: 15%;
+    border-radius: 25px;	
+    background-color: #3255f3;
+    color: #FFFFFF;	
+    font-family: 'Roboto',sans-serif;	
+    font-size: 15px;	
+   
+}
+
+.saveText{
+    display: inline-flex;
+    text-align:left;
+    font-size: 1.3rem;
+    width: 81%;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    align-items: center;
+}
+  

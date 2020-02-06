@@ -10,6 +10,200 @@ import { Router } from '@angular/router';
 })
 export class PaymentrecordPage implements OnInit {
 
+  getBalanceDetail = [
+
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    }, {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    },
+    {
+      "date": "01/02/2020",
+      "credited": "2000",
+      "debited": "2500",
+     
+    }
+  ]
   constructor(public dialog: MatDialog,
     public router: Router) { }
 
@@ -20,7 +214,6 @@ export class PaymentrecordPage implements OnInit {
   updateBalance() {
     const dialogRef = this.dialog.open(UpdatebalancePage, {
       width: '450px',
-      // data: send_data
     });
     dialogRef.afterClosed().subscribe(async result => {
       dialogRef.close();

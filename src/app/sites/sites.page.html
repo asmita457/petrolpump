@@ -1,5 +1,7 @@
 <ion-header>
+  <!-- <ion-toolbar class="new-background-color"> -->
   <ion-toolbar color="primary">
+
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -12,71 +14,271 @@
             Customers
           </div>
         </div>
-        <div style="width: 20%;text-align: left;">
-          <button class="LogoutBtn" (click)="logout()">Logout</button>
 
-        </div>
       </div>
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <div class="search-filter-container">
+<!-- <ion-content> -->
+<!-- <div class="search-filter-container">
 
-    <div class="SearchOption" style="width: 92%;">
-      <div class="SearchDiv">
-        <input class="valid" type="text" [(ngModel)]="search_text" placeholder="Search" name="name" />
+  <div class="SearchOption" style="width: 92%;">
+    <div class="SearchDiv">
+      <input class="valid" type="text" [(ngModel)]="search_text" placeholder="Search" name="name" />
+    </div>
+  </div>
+
+
+</div> -->
+
+<ion-content>
+
+  <div align="center">
+    <ion-searchbar type="text" debounce="500" (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list *ngIf="isItemAvailable">
+        <ion-item *ngFor="let item of items">{{ item }}</ion-item>
+    </ion-list>
+  
+  </div>
+ 
+  <!-- <div align="center" style="margin: 10px">
+    <ion-searchbar placeholder="Search Contact" style="border-radius: 10%;height: 60px; width: 80%">
+    </ion-searchbar>
+  </div> -->
+  <div *ngFor="let daata of getCusstomers; index as i">
+    <ion-item (click)="getCustomerDetailInfo(daata)" style="margin-left:-20px">
+      <div style="margin-left:30px">
+        <img *ngIf="daata.imagepath == '' " src="../../assets/acnt.png"
+        style="width:30px; height: 30px;border-radius: 50% ; border: 1px solid #dfdcdc; margin-right:20px" />
+      <img *ngIf="daata.imagepath != '' " src="{{daata.imagepath}}"
+        style="width:30px; height: 30px;border-radius: 50%;  border: 1px solid #817d7d; margin-right:20px" />
+     
+    
       </div>
+      {{daata.name}}
+    </ion-item>
+  </div>
+  <!-- <div style="margin:10%">
+
+    <p *ngIf="aContact != empty || aContact != '' || aContact != null || aContact != undefined">A</p>
+    <div *ngFor="let daata of aContact; index as i">
+      <ion-item *ngIf="aContact != empty || aContact != '' || aContact != null || aContact != undefined" (click)="getCustomerDetailInfo()">
+        <button
+          style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">A</button>
+        {{daata}}
+      </ion-item>
     </div>
 
+    <p *ngIf="bContact != empty || bContact != '' || bContact != null || bContact != undefined">B</p>
+    <div *ngFor="let daata of bContact; index as i">
+      <ion-item *ngIf="bContact != empty || bContact != '' || bContact != null || bContact != undefined">
+        <button
+          style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">B</button>
+        {{daata}}
+      </ion-item>
+    </div>
 
-  </div>
+    <p *ngIf="cContact != empty || cContact != '' || cContact != null || cContact != undefined">C</p>
+    <div *ngFor="let daata of cContact; index as i">
+      <ion-item *ngIf="cContact != empty || cContact != '' || cContact != null || cContact != undefined">
+        <button
+          style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">C</button>
+        {{daata}}
+      </ion-item>
+    </div>
 
-  <div class="ListItem">
-    <mat-card class="ListCard" *ngFor="let daata of getCusstomers; index as i">
-      <ion-row>
-        <ion-col size="11">
-          <div (click)="getBalanceDetail()">
-            <ion-row style="padding: 2px;">
-              <ion-label>{{daata.name}}</ion-label>
-            </ion-row>
-            <ion-row style="padding: 2px;">
-              <ion-label>{{daata.mobile}}</ion-label>
-            </ion-row>
-            <ion-row style="padding: 2px;">
-              <ion-label>{{daata.amount}}</ion-label>
-            </ion-row>
-          </div>
+    <p *ngIf="dContact != empty || dContact != '' || dContact != null || dContact != undefined">D</p>
+    <div *ngFor="let daata of dContact; index as i">
+      <ion-item *ngIf="dContact != empty || dContact != '' || dContact != null || dContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">D</button>
+        {{daata}}
+      </ion-item>
+    </div>
 
-          <ion-row style="padding: 2px; width:50%" *ngIf="displayDetail == 1">
-            <ion-label>{{daata.address}}</ion-label>
-          </ion-row>
-         
-        </ion-col>
+    <p *ngIf="eContact != null || eContact != empty || eContact != undefined || eContact.length != 0">E</p>
+    <div *ngFor="let daata of eContact; index as i">
+      <ion-item *ngIf="eContact != null || eContact != empty || eContact != undefined || eContact.length != 0">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">E</button>
+        {{daata}}
+      </ion-item>
+    </div>
 
-        <ion-col size="1">
-          <img src="../../assets/menudispllay.png" style="width:20px; height: 20px" [matMenuTriggerFor]="menu"/>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="updateRecord()">Update</button>
-            <button mat-menu-item (click)="deleteRecord()">Delete</button>
-          </mat-menu>
-        </ion-col>
+    <p *ngIf="fContact != empty || fContact != '' || fContact != null || fContact != undefined">F</p>
+    <div *ngFor="let daata of fContact; index as i">
+      <ion-item *ngIf="fContact != empty || fContact != '' || fContact != null || fContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">F</button>
+        {{daata}}
+      </ion-item>
+    </div>
 
-      </ion-row>
-      <ion-row style="margin-bottom:-10px">
-        <ion-col size="11"></ion-col>
-        <ion-col size="1" >
-          <img *ngIf="displayDetail == 0" src="{{displayImage}}" style="width:15px; height: 15px" (click)="detailInfo(i)"/>
-          <img *ngIf="displayDetail == 1" src="{{displayImage}}" style="width:15px; height: 15px" (click)="lessInfo(i)"/>
+    <p *ngIf="gContact != empty || gContact != '' || gContact != null || gContact != undefined">G</p>
+    <div *ngFor="let daata of gContact; index as i">
+      <ion-item *ngIf="gContact != empty || gContact != '' || gContact != null || gContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">G</button>
+        {{daata}}
+      </ion-item>
+    </div>
 
-        </ion-col>
+    <p *ngIf="hContact != empty || hContact != '' || hContact != null || hContact != undefined">H</p>
+    <div *ngFor="let daata of hContact; index as i">
+      <ion-item *ngIf="hContact != empty || hContact != '' || hContact != null || hContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">H</button>
+        {{daata}}
+      </ion-item>
+    </div>
 
-      </ion-row>
-    </mat-card>
+    <p *ngIf="iContact != empty || iContact != '' || iContact != null || iContact != undefined">I</p>
+    <div *ngFor="let daata of iContact; index as i">
+      <ion-item *ngIf="iContact != empty || iContact != '' || iContact != null || iContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">I</button>
+        {{daata}}
+      </ion-item>
+    </div>
 
-  </div>
+    <p *ngIf="jContact != empty || jContact != '' || jContact != null || jContact != undefined">J</p>
+    <div *ngFor="let daata of jContact; index as i">
+      <ion-item *ngIf="jContact != empty || jContact != '' || jContact != null || jContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">J</button>
+        {{daata}}
+      </ion-item>
+    </div>
 
+    <p *ngIf="kContact != empty || kContact != '' || kContact != null || kContact != undefined">K</p>
+    <div *ngFor="let daata of kContact; index as i">
+      <ion-item *ngIf="kContact != empty || kContact != '' || kContact != null || kContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">K</button>
+        {{daata}}
+      </ion-item>
+    </div>
 
-  <button mat-raised-button class="FixedButton" (click)="addCustomaer()"> <img src="../../assets/AddRestro.png"
-      width="30" height="30"> </button>
+    <p *ngIf="lContact != empty || lContact != '' || lContact != null || lContact != undefined">L</p>
+    <div *ngFor="let daata of lContact; index as i">
+      <ion-item *ngIf="lContact != empty || lContact != '' || lContact != null || lContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">L</button>
+        {{daata}}
+      </ion-item>
+    </div>
+
+    <p *ngIf="mContact != empty || mContact != '' || mContact != null || mContact != undefined">M</p>
+    <div *ngFor="let daata of mContact; index as i">
+      <ion-item *ngIf="mContact != empty || mContact != '' || mContact != null || mContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">M</button>
+        {{daata}}
+      </ion-item>
+    </div>
+
+    <p *ngIf="nContact != empty || nContact != '' || nContact != null || nContact != undefined">N</p>
+    <div *ngFor="let daata of nContact; index as i">
+      <ion-item *ngIf="nContact != empty || nContact != '' || nContact != null || nContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">N</button>
+        {{daata}}
+      </ion-item>
+    </div>
+
+    <p *ngIf="oContact != empty || oContact != '' || oContact != null || oContact != undefined">O</p>
+    <div *ngFor="let daata of oContact; index as i">
+      <ion-item *ngIf="oContact != empty || oContact != '' || oContact != null || oContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">O</button>
+        {{daata}}
+      </ion-item>
+    </div>
+
+    <p *ngIf="pContact != empty || pContact != '' || pContact != null || pContact != undefined">P</p>
+    <div *ngFor="let daata of pContact; index as i">
+      <ion-item *ngIf="pContact != empty || pContact != '' || pContact != null || pContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">P</button>
+        {{daata}}
+      </ion-item>
+    </div>
+
+    <p *ngIf="qContact != empty || qContact != '' || qContact != null || qContact != undefined">Q</p>
+    <div *ngFor="let daata of qContact; index as i">
+      <ion-item *ngIf="qContact != empty || qContact != '' || qContact != null || qContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">Q</button>
+        {{daata}}
+      </ion-item>
+    </div>
+
+    <p *ngIf="rContact != empty || rContact != '' || rContact != null || rContact != undefined">R</p>
+    <div *ngFor="let daata of rContact; index as i">
+      <ion-item *ngIf="rContact != empty || rContact != '' || rContact != null || rContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">R</button>
+        {{daata}}
+      </ion-item>
+    </div>
+
+    <p *ngIf="sContact != empty || sContact != '' || sContact != null || sContact != undefined">S</p>
+    <div *ngFor="let daata of sContact; index as i">
+      <ion-item *ngIf="sContact != empty || sContact != '' || sContact != null || sContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">S</button>
+        {{daata}}
+      </ion-item>
+    </div>
+
+    <p *ngIf="tContact != empty || tContact != '' || tContact != null || tContact != undefined">T</p>
+    <div *ngFor="let daata of tContact; index as i">
+      <ion-item *ngIf="tContact != empty || tContact != '' || tContact != null || tContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">T</button>
+        {{daata}}
+      </ion-item>
+    </div>
+
+    <p *ngIf="uContact != empty || uContact != '' || uContact != null || uContact != undefined">U</p>
+    <div *ngFor="let daata of uContact; index as i">
+      <ion-item *ngIf="uContact != empty || uContact != '' || uContact != null || uContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">U</button>
+        {{daata}}
+      </ion-item>
+    </div>
+
+    <p *ngIf="vContact != empty || vContact != '' || vContact != null || vContact != undefined">V</p>
+    <div *ngFor="let daata of vContact; index as i">
+      <ion-item *ngIf="vContact != empty || vContact != '' || vContact != null || vContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">V</button>
+        {{daata}}
+      </ion-item>
+    </div>
+
+    <p *ngIf="wContact != empty || wContact != '' || wContact != null || wContact != undefined">W</p>
+    <div *ngFor="let daata of wContact; index as i">
+      <ion-item *ngIf="wContact != empty || wContact != '' || wContact != null || wContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">W</button>
+        {{daata}}
+      </ion-item>
+    </div>
+
+    <p *ngIf="xContact != empty || xContact != '' || xContact != null || xContact != undefined">X</p>
+    <div *ngFor="let daata of xContact; index as i">
+      <ion-item *ngIf="xContact != empty || xContact != '' || xContact != null || xContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">X</button>
+        {{daata}}
+      </ion-item>
+    </div>
+
+    <p *ngIf="yContact != empty || yContact != '' || yContact != null || yContact != undefined">Y</p>
+    <div *ngFor="let daata of yContact; index as i">
+      <ion-item *ngIf="yContact != empty || yContact != '' || yContact != null || yContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">Y</button>
+        {{daata}}
+      </ion-item>
+    </div>
+
+    <p *ngIf="zContact != empty || zContact != '' || zContact != null || zContact != undefined">Z</p>
+    <div *ngFor="let daata of zContact; index as i">
+      <ion-item *ngIf="zContact != empty || zContact != '' || zContact != null || zContact != undefined">
+        <button style="width:35px; height: 35px; border-radius:50% ; margin-right: 20px; background-color: tomato;">Z</button>
+        {{daata}}
+      </ion-item>
+
+    </div>
+
+  </div> -->
+
+  <ion-item>
+  </ion-item>
 </ion-content>
+
+
+<button mat-raised-button class="FixedButton" (click)="addCustomaer()"> <img
+    src="../../assets/AddRestro.png" width="30" height="30"> </button>
+<!-- </ion-content> -->

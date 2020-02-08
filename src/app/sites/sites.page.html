@@ -29,13 +29,18 @@
     </ion-list>
   
   </div>
+
+  <div class="cl-center-title" fxLayout="row" fxLayoutAlign="center center">
+    <ion-icon name="person-add" style="color:rgb(18, 118, 199);width:20px; height: 20px"></ion-icon>
+    <ion-label style="color:rgb(18, 118, 199); " >Add Customer</ion-label>
+  </div>
   
-  <ion-row (click)="addCustomaer()">
+  <!-- <ion-row (click)="addCustomaer()">
     <ion-col size="12" align="center">
       <ion-icon name="person-add" style="color:rgb(18, 118, 199);width:20px; height: 20px"></ion-icon>
       <ion-label style="color:rgb(18, 118, 199); " >Add Customer</ion-label>
     </ion-col>
-  </ion-row>
+  </ion-row> -->
 
   <div *ngFor="let daata of getCusstomers; index as i">
     <ion-item (click)="getCustomerDetailInfo(daata)" style="margin-left:-20px">

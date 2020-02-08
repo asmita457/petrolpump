@@ -38,7 +38,7 @@ import { NetworkproviderserviceService } from './services/networkproviderservice
 import { UpdatebalancePage } from './updatebalance/updatebalance.page';
 import { NewcustomerPage } from './newcustomer/newcustomer.page';
 import { NewcustomerPageModule } from './newcustomer/newcustomer.module';
-
+import { FlexLayoutModule } from '@angular/flex-layout'
 
 
 
@@ -67,6 +67,7 @@ import { NewcustomerPageModule } from './newcustomer/newcustomer.module';
     MatCardModule,
     MatCheckboxModule,
     MatChipsModule,
+    FlexLayoutModule,
     MatDatepickerModule,
     MatDialogModule,
     MatExpansionModule,

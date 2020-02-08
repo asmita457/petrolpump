@@ -9,6 +9,7 @@ import { MaterialModule } from '../material.module';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { SitesPage } from './sites.page';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { SitesPage } from './sites.page';
     FormsModule,
     IonicModule,
     MaterialModule,
+    FlexLayoutModule,
     SitesPageRoutingModule,
     Ng2SearchPipeModule
   ],
